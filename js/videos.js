@@ -1,6 +1,6 @@
 /**
  * js/videos.js
- * Carga lazy y Modal Interactivo para videos de YouTube (Ministerio Vida)
+ * Modal interactivo para videos de YouTube (Orivex Style)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .video-modal {
                 position: fixed;
                 inset: 0;
-                background: rgba(0, 0, 0, 0.94);
-                backdrop-filter: blur(16px);
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
                 z-index: 10000;
                 display: flex;
                 align-items: center;
@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 aspect-ratio: 16 / 9;
                 position: relative;
                 background: #000;
-                border-radius: 12px;
+                border-radius: 16px;
                 overflow: hidden;
-                border: 1px solid rgba(245, 158, 11, 0.3);
-                box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+                border: 1px solid rgba(245, 158, 11, 0.4);
+                box-shadow: 0 25px 60px rgba(0,0,0,0.9);
             }
             .video-modal-content iframe {
                 width: 100%;
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. Configurar selectores de tarjetas de video
-    const videoCards = document.querySelectorAll('.sermon-card, .video-card-clean, .video-card');
+    const videoCards = document.querySelectorAll('.sermon-orivex-card, .sermon-box, .sermon-card, .video-card');
 
     videoCards.forEach(card => {
         const videoId = card.getAttribute('data-youtube-id');

@@ -1,10 +1,10 @@
 /**
- * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL (TEMA OSCURO DE ALTO CONTRASTE)
+ * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL (ORIVEX WEBFLOW STYLE)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Header scroll effect
-    const header = document.querySelector('.top-nav-wrapper');
+    const header = document.querySelector('.orivex-header');
     const handleScroll = () => {
         if (window.scrollY > 30) {
             header?.classList.add('scrolled');
@@ -16,35 +16,35 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
 
     // 2. Menú Móvil
-    const toggleBtn = document.getElementById('toggleMenu');
-    const dropdown = document.getElementById('dropdownMenu');
+    const burger = document.getElementById('burgerToggle');
+    const drawer = document.getElementById('mobileDrawer');
 
-    if (toggleBtn && dropdown) {
-        toggleBtn.addEventListener('click', (e) => {
+    if (burger && drawer) {
+        burger.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isOpen = toggleBtn.classList.toggle('active');
-            dropdown.classList.toggle('active');
-            toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            const isOpen = burger.classList.toggle('active');
+            drawer.classList.toggle('active');
+            burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        dropdown.querySelectorAll('a').forEach(link => {
+        drawer.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                toggleBtn.classList.remove('active');
-                dropdown.classList.remove('active');
-                toggleBtn.setAttribute('aria-expanded', 'false');
+                burger.classList.remove('active');
+                drawer.classList.remove('active');
+                burger.setAttribute('aria-expanded', 'false');
             });
         });
 
         document.addEventListener('click', (e) => {
-            if (dropdown.classList.contains('active') && !dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
-                toggleBtn.classList.remove('active');
-                dropdown.classList.remove('active');
-                toggleBtn.setAttribute('aria-expanded', 'false');
+            if (drawer.classList.contains('active') && !drawer.contains(e.target) && !burger.contains(e.target)) {
+                burger.classList.remove('active');
+                drawer.classList.remove('active');
+                burger.setAttribute('aria-expanded', 'false');
             }
         });
     }
 
-    // 3. Smooth Scroll con Offset
+    // 3. Smooth Scroll con Offset de Navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Scroll Reveal
+    // 4. Scroll Reveal (IntersectionObserver)
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -73,13 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 obs.unobserve(entry.target);
             }
         });
-    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
 
-    document.querySelectorAll('.reveal-scroll').forEach(el => observer.observe(el));
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-    // 5. Active Link Highlight
+    // 5. Resaltar enlace activo según la sección visible
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link-list .nav-btn');
+    const navLinks = document.querySelectorAll('.orivex-nav-menu .nav-link-item');
 
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -94,28 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => navObserver.observe(section));
 
-    // 6. Formulario de Contacto Directo
+    // 6. Formulario de Contacto
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalHTML = btn.innerHTML;
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalHTML = submitBtn.innerHTML;
             
-            btn.disabled = true;
-            btn.innerHTML = `<span>Enviando mensaje...</span>`;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Enviando mensaje...</span>`;
 
             setTimeout(() => {
-                btn.innerHTML = `<span>¡Mensaje Enviado con Éxito! ✓</span>`;
-                btn.style.background = '#25D366';
-                btn.style.color = '#FFFFFF';
+                submitBtn.innerHTML = `<span>¡Mensaje Enviado con Éxito! ✓</span>`;
+                submitBtn.style.background = '#25D366';
+                submitBtn.style.color = '#FFFFFF';
                 contactForm.reset();
 
                 setTimeout(() => {
-                    btn.disabled = false;
-                    btn.innerHTML = originalHTML;
-                    btn.style.background = '';
-                    btn.style.color = '';
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.style.background = '';
+                    submitBtn.style.color = '';
                 }, 4000);
             }, 700);
         });
