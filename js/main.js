@@ -1,10 +1,10 @@
 /**
- * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL (WARM EDITORIAL)
+ * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL (TEMA OSCURO DE ALTO CONTRASTE)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Header scroll effect
-    const header = document.querySelector('.editorial-header');
+    const header = document.querySelector('.top-nav-wrapper');
     const handleScroll = () => {
         if (window.scrollY > 30) {
             header?.classList.add('scrolled');
@@ -16,30 +16,30 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
 
     // 2. Menú Móvil
-    const menuToggle = document.getElementById('menuToggle');
-    const mobilePanel = document.getElementById('mobilePanel');
+    const toggleBtn = document.getElementById('toggleMenu');
+    const dropdown = document.getElementById('dropdownMenu');
 
-    if (menuToggle && mobilePanel) {
-        menuToggle.addEventListener('click', (e) => {
+    if (toggleBtn && dropdown) {
+        toggleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isOpen = menuToggle.classList.toggle('active');
-            mobilePanel.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            const isOpen = toggleBtn.classList.toggle('active');
+            dropdown.classList.toggle('active');
+            toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        mobilePanel.querySelectorAll('a').forEach(link => {
+        dropdown.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobilePanel.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
+                toggleBtn.classList.remove('active');
+                dropdown.classList.remove('active');
+                toggleBtn.setAttribute('aria-expanded', 'false');
             });
         });
 
         document.addEventListener('click', (e) => {
-            if (mobilePanel.classList.contains('active') && !mobilePanel.contains(e.target) && !menuToggle.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                mobilePanel.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
+            if (dropdown.classList.contains('active') && !dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
+                toggleBtn.classList.remove('active');
+                dropdown.classList.remove('active');
+                toggleBtn.setAttribute('aria-expanded', 'false');
             }
         });
     }
@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
 
-    document.querySelectorAll('.scroll-item').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal-scroll').forEach(el => observer.observe(el));
 
     // 5. Active Link Highlight
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-pill-menu .nav-item');
+    const navLinks = document.querySelectorAll('.nav-link-list .nav-btn');
 
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => navObserver.observe(section));
 
-    // 6. Formulario Feedback
+    // 6. Formulario de Contacto Directo
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = `<span>Enviando mensaje...</span>`;
 
             setTimeout(() => {
-                btn.innerHTML = `<span>¡Mensaje Enviado! ✓</span>`;
-                btn.style.background = '#10B981';
+                btn.innerHTML = `<span>¡Mensaje Enviado con Éxito! ✓</span>`;
+                btn.style.background = '#25D366';
                 btn.style.color = '#FFFFFF';
                 contactForm.reset();
 

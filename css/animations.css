@@ -1,11 +1,11 @@
 /* ==========================================================================
-   MINISTERIO VIDA — ANIMACIONES & TRANSICIONES EDITORIALES
+   MINISTERIO VIDA — ANIMACIONES FLUIDAS & SCROLL REVEAL
    ========================================================================== */
 
-@keyframes fadeSlideUp {
+@keyframes fastFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -13,60 +13,44 @@
   }
 }
 
-@keyframes pulseGold {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(200, 155, 60, 0.6);
-  }
-  70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 8px rgba(200, 155, 60, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(200, 155, 60, 0);
-  }
-}
-
-.anim-fade {
+.fast-fade {
   opacity: 0;
-  animation: fadeSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fastFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero-left-content.anim-fade { animation-delay: 0.1s; }
-.hero-right-media.anim-fade { animation-delay: 0.25s; }
+.hero-tag-badge.fast-fade { animation-delay: 0.05s; }
+.hero-big-title.fast-fade { animation-delay: 0.15s; }
+.hero-easy-read.fast-fade { animation-delay: 0.25s; }
+.hero-cta-flex.fast-fade { animation-delay: 0.35s; }
+.hero-quick-points.fast-fade { animation-delay: 0.45s; }
 
-.pulse-indicator {
-  animation: pulseGold 2s infinite;
-}
-
-/* Scroll items reveal */
-.scroll-item {
+/* Scroll Reveal */
+.reveal-scroll {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.scroll-item.is-visible {
+.reveal-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.editorial-cards-3 .clean-pillar-card:nth-child(1) { transition-delay: 0.05s; }
-.editorial-cards-3 .clean-pillar-card:nth-child(2) { transition-delay: 0.15s; }
-.editorial-cards-3 .clean-pillar-card:nth-child(3) { transition-delay: 0.25s; }
+.three-pillars-cards .pillar-card-dark:nth-child(1) { transition-delay: 0.05s; }
+.three-pillars-cards .pillar-card-dark:nth-child(2) { transition-delay: 0.12s; }
+.three-pillars-cards .pillar-card-dark:nth-child(3) { transition-delay: 0.19s; }
 
-.events-magazine-grid .event-item-box:nth-child(1) { transition-delay: 0.05s; }
-.events-magazine-grid .event-item-box:nth-child(2) { transition-delay: 0.12s; }
-.events-magazine-grid .event-item-box:nth-child(3) { transition-delay: 0.19s; }
-.events-magazine-grid .event-item-box:nth-child(4) { transition-delay: 0.26s; }
+.events-grid-clean .event-card-item:nth-child(1) { transition-delay: 0.05s; }
+.events-grid-clean .event-card-item:nth-child(2) { transition-delay: 0.1s; }
+.events-grid-clean .event-card-item:nth-child(3) { transition-delay: 0.15s; }
+.events-grid-clean .event-card-item:nth-child(4) { transition-delay: 0.2s; }
 
-.reading-editorial-grid .reading-plan-card:nth-child(1) { transition-delay: 0.05s; }
-.reading-editorial-grid .reading-plan-card:nth-child(2) { transition-delay: 0.15s; }
-.reading-editorial-grid .reading-plan-card:nth-child(3) { transition-delay: 0.25s; }
+.reading-three-grid .reading-item-card:nth-child(1) { transition-delay: 0.05s; }
+.reading-three-grid .reading-item-card:nth-child(2) { transition-delay: 0.12s; }
+.reading-three-grid .reading-item-card:nth-child(3) { transition-delay: 0.19s; }
 
-.sermon-editorial-grid .sermon-media-card:nth-child(1) { transition-delay: 0.05s; }
-.sermon-editorial-grid .sermon-media-card:nth-child(2) { transition-delay: 0.15s; }
-.sermon-editorial-grid .sermon-media-card:nth-child(3) { transition-delay: 0.25s; }
+.sermon-cards-row .sermon-box:nth-child(1) { transition-delay: 0.05s; }
+.sermon-cards-row .sermon-box:nth-child(2) { transition-delay: 0.12s; }
+.sermon-cards-row .sermon-box:nth-child(3) { transition-delay: 0.19s; }

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ministerio Vida | Iglesia Cristiana en Santa Cruz, Bolivia</title>
-    <meta name="description" content="Ministerio Vida: Una comunidad contemporánea en Santa Cruz de la Sierra dedicada a inspirar fe, fortalecer familias y transformar nuestra ciudad.">
-    <meta name="theme-color" content="#FBFBFA">
+    <title>Ministerio Vida | Iglesia en Santa Cruz, Bolivia</title>
+    <meta name="description" content="Bienvenido a Ministerio Vida en Santa Cruz. Una iglesia contemporánea de alto impacto para conectar con Dios y transformar vidas.">
+    <meta name="theme-color" content="#0B0C10">
 
-    <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+    <!-- Google Fonts: Outfit (Titulares de alto impacto) & Inter (Lectura ultra-nítida) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -18,112 +18,125 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2318181B'/><path d='M50 20v60M30 40h40' stroke='%23C89B3C' stroke-width='8' stroke-linecap='round'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B0C10'/><path d='M50 18v64M28 38h44' stroke='%23F59E0B' stroke-width='9' stroke-linecap='round'/></svg>">
 </head>
-<body class="theme-warm-editorial">
+<body>
 
     <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- HEADER FLOTANTE EDITORIAL                              -->
+    <!-- NAVBAR OSCURO DE ALTO CONTRASTE                        -->
     <!-- ═══════════════════════════════════════════════════════ -->
-    <header class="editorial-header">
-        <nav class="nav-shell">
-            <!-- Brand -->
-            <a href="#" class="logo-box">
-                <span class="logo-icon">✝</span>
-                <div class="logo-words">
-                    <span class="logo-title">MINISTERIO VIDA</span>
-                    <span class="logo-sub">SANTA CRUZ · BOLIVIA</span>
+    <header class="top-nav-wrapper">
+        <nav class="main-navbar">
+            <a href="#" class="brand-badge" aria-label="Inicio Ministerio Vida">
+                <div class="cross-icon">✝</div>
+                <div class="brand-text-block">
+                    <span class="brand-name">MINISTERIO <strong>VIDA</strong></span>
+                    <span class="brand-tagline">SANTA CRUZ · BOLIVIA</span>
                 </div>
             </a>
 
-            <!-- Nav Links -->
-            <ul class="nav-pill-menu">
-                <li><a href="#inicio" class="nav-item active">Inicio</a></li>
-                <li><a href="#mision" class="nav-item">Nuestra Misión</a></li>
-                <li><a href="#eventos" class="nav-item">Eventos</a></li>
-                <li><a href="#lecturas" class="nav-item">Planes de Lectura</a></li>
-                <li><a href="#mensajes" class="nav-item">Predicaciones</a></li>
-                <li><a href="#sedes" class="nav-item">Sedes</a></li>
+            <!-- Menú de Navegación -->
+            <ul class="nav-link-list">
+                <li><a href="#inicio" class="nav-btn active">Inicio</a></li>
+                <li><a href="#mision" class="nav-btn">Nuestra Misión</a></li>
+                <li><a href="#eventos" class="nav-btn">Eventos</a></li>
+                <li><a href="#lecturas" class="nav-btn">Planes de Lectura</a></li>
+                <li><a href="#mensajes" class="nav-btn">Sermones</a></li>
+                <li><a href="#sedes" class="nav-btn">Sedes &amp; Horarios</a></li>
             </ul>
 
-            <!-- CTA & Toggle -->
-            <div class="nav-cta-wrap">
-                <a href="#contacto" class="btn-editorial-gold">
-                    <span>Planifica tu Visita</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <!-- Botón de Acción Directo -->
+            <div class="nav-action-area">
+                <a href="#contacto" class="btn-glow-gold">
+                    <span>Soy Nuevo / Visítanos</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <button class="mobile-menu-btn" id="menuToggle" aria-label="Abrir menú">
+                <button class="mobile-toggle-button" id="toggleMenu" aria-label="Abrir menú">
+                    <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
         </nav>
 
-        <!-- Menú Móvil Desplegable -->
-        <div class="mobile-nav-panel" id="mobilePanel">
-            <a href="#inicio" class="m-link">Inicio</a>
-            <a href="#mision" class="m-link">Nuestra Misión</a>
-            <a href="#eventos" class="m-link">Eventos</a>
-            <a href="#lecturas" class="m-link">Planes de Lectura</a>
-            <a href="#mensajes" class="m-link">Predicaciones</a>
-            <a href="#sedes" class="m-link">Sedes y Horarios</a>
-            <a href="#contacto" class="btn-editorial-gold m-cta">Contactar al Pastor</a>
+        <!-- Menú Móvil -->
+        <div class="mobile-dropdown" id="dropdownMenu">
+            <a href="#inicio" class="dropdown-link">Inicio</a>
+            <a href="#mision" class="dropdown-link">Nuestra Misión</a>
+            <a href="#eventos" class="dropdown-link">Próximos Eventos</a>
+            <a href="#lecturas" class="dropdown-link">Planes de Lectura</a>
+            <a href="#mensajes" class="dropdown-link">Sermones en Video</a>
+            <a href="#sedes" class="dropdown-link">Sedes y Horarios</a>
+            <a href="#contacto" class="btn-glow-gold dropdown-cta">Habla con el Pastor</a>
         </div>
     </header>
 
     <main id="inicio">
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- HERO: WARM EDITORIAL / REVISTA MODERNA                 -->
+        <!-- HERO OSCURO DE ALTO CONTRASTE & LECTURA RÁPIDA         -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="editorial-hero">
-            <div class="hero-wrapper">
-                <!-- Columna Izquierda: Mensaje y Acciones -->
-                <div class="hero-left-content anim-fade">
-                    <div class="hero-badge-pill">
-                        <span class="pulse-indicator"></span>
-                        <span>BIENVENIDOS A CASA</span>
-                    </div>
+        <section class="hero-high-impact">
+            <div class="hero-bg-layer">
+                <img 
+                    src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1920&q=85&auto=format&fit=crop" 
+                    alt="Reunión de adoración en Ministerio Vida"
+                    class="hero-photo"
+                    fetchpriority="high"
+                >
+                <div class="hero-dark-vignette"></div>
+            </div>
 
-                    <h1 class="hero-display-title">
-                        Fe auténtica, <br>
-                        <em>comunidad real</em> y <br>
-                        un propósito eterno.
-                    </h1>
-
-                    <p class="hero-p">
-                        Somos una iglesia para personas reales en búsqueda de respuestas verdaderas. Un lugar cálido donde cada generación puede encontrar esperanza y una familia en Santa Cruz.
-                    </p>
-
-                    <div class="hero-btn-group">
-                        <a href="#contacto" class="btn-hero-primary">
-                            <span>Soy Nuevo / Conectar</span>
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                        <a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            <span>WhatsApp Pastoral</span>
-                        </a>
-                    </div>
+            <div class="hero-center-box">
+                <div class="hero-tag-badge fast-fade">
+                    <span class="live-dot-amber"></span>
+                    <span>DOMINGOS 09:00 AM &amp; 11:00 AM · SANTA CRUZ</span>
                 </div>
 
-                <!-- Columna Derecha: Foto de Portada Editorial -->
-                <div class="hero-right-media anim-fade">
-                    <div class="media-frame">
-                        <img 
-                            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1000&q=85&auto=format&fit=crop" 
-                            alt="Comunidad Ministerio Vida"
-                            class="hero-editorial-img"
-                            fetchpriority="high"
-                        >
-                        <!-- Tarjeta Flotante con Horarios de Servicio -->
-                        <div class="floating-service-chip">
-                            <div class="chip-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            </div>
-                            <div class="chip-info">
-                                <span class="chip-head">Servicios Dominicales</span>
-                                <span class="chip-times">Domingos 09:00 &amp; 11:00 AM</span>
-                            </div>
+                <h1 class="hero-big-title fast-fade">
+                    UN LUGAR PARA CONECTAR, CRECER Y <br>
+                    <span class="text-amber-glow">TRANSFORMAR TU VIDA</span>
+                </h1>
+
+                <p class="hero-easy-read fast-fade">
+                    Te invitamos a ser parte de una iglesia cálida, dinámica y llena de propósito. Encuentra a Dios, forma amistades sinceras y vive tu fe con impacto real.
+                </p>
+
+                <!-- Botones de Acción Ultra Visibles -->
+                <div class="hero-cta-flex fast-fade">
+                    <a href="https://wa.me/591XXXXXXXXX?text=Hola%20Ministerio%20Vida%2C%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-large-whatsapp">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span>Escribir por WhatsApp</span>
+                    </a>
+
+                    <a href="#sedes" class="btn-large-outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Ver Sedes y Horarios</span>
+                    </a>
+                </div>
+
+                <!-- 3 Puntos Clave de Lectura Inmediata -->
+                <div class="hero-quick-points fast-fade">
+                    <div class="q-point">
+                        <span class="q-icon">📅</span>
+                        <div class="q-text">
+                            <strong>Servicios Domingos</strong>
+                            <span>09:00 AM y 11:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="q-sep"></div>
+                    <div class="q-point">
+                        <span class="q-icon">📍</span>
+                        <div class="q-text">
+                            <strong>2 Sedes en la Ciudad</strong>
+                            <span>Campus Central &amp; Norte</span>
+                        </div>
+                    </div>
+                    <div class="q-sep"></div>
+                    <div class="q-point">
+                        <span class="q-icon">👶</span>
+                        <div class="q-text">
+                            <strong>Vida Kids</strong>
+                            <span>Clases especiales para niños</span>
                         </div>
                     </div>
                 </div>
@@ -131,211 +144,215 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- NUESTRA MISIÓN: 3 PILARES DE VIDA                      -->
+        <!-- NUESTRA MISIÓN (3 PILARES CLAROS Y VISIBLES)           -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="page-section" id="mision">
-            <div class="wrap">
-                <div class="section-tag-header">
-                    <span class="pre-title">NUESTROS PILARES</span>
-                    <h2 class="main-title">Existimos para amar a Dios y servir a nuestra gente</h2>
-                    <p class="desc-text">
-                        En Ministerio Vida nos movemos por tres compromisos innegociables que definen todo lo que hacemos como iglesia.
+        <section class="section-block" id="mision">
+            <div class="container-grid">
+                <div class="block-header">
+                    <span class="kicker-amber">NUESTROS TRES PILARES</span>
+                    <h2 class="block-title">¿QUÉ NOS DEFINE COMO IGLESIA?</h2>
+                    <p class="block-lead">
+                        Un enfoque claro, bíblico y práctico diseñado para que crezcas en tu fe y encuentres una familia espiritual genuina.
                     </p>
                 </div>
 
-                <div class="editorial-cards-3">
+                <div class="three-pillars-cards">
                     <!-- Tarjeta 1 -->
-                    <div class="clean-pillar-card scroll-item">
-                        <div class="pillar-top-row">
-                            <span class="pillar-label">01 / CONEXIÓN</span>
-                            <div class="pillar-ico">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                            </div>
+                    <div class="pillar-card-dark reveal-scroll">
+                        <div class="pillar-top-badge">01 / COMUNIDAD</div>
+                        <div class="pillar-icon-circle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         </div>
-                        <h3 class="pillar-headline">Comunidad Activa</h3>
-                        <p class="pillar-para">Fomentamos amistades transparentes y profundas. A través de nuestros Grupos de Vida en hogares, nadie camina solo.</p>
+                        <h3 class="pillar-name">Comunidad Activa</h3>
+                        <p class="pillar-description">
+                            Creemos en las relaciones reales. En nuestros <strong>Grupos de Vida en hogares</strong> podrás hacer amigos sinceros, compartir una comida y orar juntos cada semana.
+                        </p>
                     </div>
 
                     <!-- Tarjeta 2 -->
-                    <div class="clean-pillar-card scroll-item">
-                        <div class="pillar-top-row">
-                            <span class="pillar-label">02 / CRECIMIENTO</span>
-                            <div class="pillar-ico">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                            </div>
+                    <div class="pillar-card-dark reveal-scroll">
+                        <div class="pillar-top-badge">02 / ENSEÑANZA</div>
+                        <div class="pillar-icon-circle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         </div>
-                        <h3 class="pillar-headline">Enseñanza Bíblica</h3>
-                        <p class="pillar-para">Estudiamos las escrituras con un enfoque claro, moderno y práctico que impacta directamente tus decisiones cotidianas.</p>
+                        <h3 class="pillar-name">Mensajes Prácticos</h3>
+                        <p class="pillar-description">
+                            Predicaciones claras y directas de la Biblia que puedes <strong>aplicar de inmediato</strong> en tu matrimonio, familia, finanzas y decisiones diarias.
+                        </p>
                     </div>
 
                     <!-- Tarjeta 3 -->
-                    <div class="clean-pillar-card scroll-item">
-                        <div class="pillar-top-row">
-                            <span class="pillar-label">03 / ACCIÓN</span>
-                            <div class="pillar-ico">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
-                            </div>
+                    <div class="pillar-card-dark reveal-scroll">
+                        <div class="pillar-top-badge">03 / SERVICIO</div>
+                        <div class="pillar-icon-circle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
                         </div>
-                        <h3 class="pillar-headline">Servicio a la Ciudad</h3>
-                        <p class="pillar-para">Llevamos el amor de Jesús con hechos concretos, respaldando a comedores, familias vulnerables y barrios de Santa Cruz.</p>
+                        <h3 class="pillar-name">Servicio a Santa Cruz</h3>
+                        <p class="pillar-description">
+                            Amamos a nuestra ciudad con acciones reales: brigadas solidarias, apoyo a familias necesitadas y actividades de voluntariado continuo.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- PRÓXIMOS EVENTOS                                       -->
+        <!-- PRÓXIMOS EVENTOS (LECTURA CLARA CON FECHAS GRANDES)    -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="page-section section-soft" id="eventos">
-            <div class="wrap">
-                <div class="section-row-head">
+        <section class="section-block section-darker" id="eventos">
+            <div class="container-grid">
+                <div class="block-header-flex">
                     <div>
-                        <span class="pre-title">CALENDARIO</span>
-                        <h2 class="main-title">Próximos Eventos</h2>
+                        <span class="kicker-amber">CALENDARIO DE ACTIVIDADES</span>
+                        <h2 class="block-title">PRÓXIMOS EVENTOS</h2>
                     </div>
-                    <a href="#contacto" class="btn-text-link">
-                        <span>Ver calendario completo</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <a href="#contacto" class="link-view-all">
+                        <span>Ver todos los eventos</span>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <div class="events-magazine-grid">
+                <div class="events-grid-clean">
                     <!-- Evento 1 -->
-                    <article class="event-item-box scroll-item">
-                        <div class="event-pic">
+                    <div class="event-card-item reveal-scroll">
+                        <div class="event-cover-box">
                             <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=700&q=80&auto=format&fit=crop" alt="Noche de Adoración" loading="lazy">
-                            <div class="event-date-flag">
-                                <span class="d-day">15</span>
-                                <span class="d-month">AGO</span>
+                            <div class="big-date-chip">
+                                <span class="d-num">15</span>
+                                <span class="d-txt">AGO</span>
                             </div>
                         </div>
-                        <div class="event-content-body">
-                            <span class="event-genre">Adoración</span>
-                            <h3 class="event-heading">Noche de Adoración &amp; Alabanza</h3>
-                            <p class="event-summary">Un encuentro íntimo para levantar una sola voz, orar por las familias y experimentar la presencia de Dios.</p>
-                            <div class="event-loc">
-                                <span>📍 Campus Central · 19:30 hrs</span>
+                        <div class="event-body-box">
+                            <span class="event-type-pill">ADORACIÓN</span>
+                            <h3 class="event-item-title">Noche de Adoración y Alabanza</h3>
+                            <p class="event-item-desc">Una velada especial para cantar, orar juntos y buscar la presencia de Dios en unidad.</p>
+                            <div class="event-location-row">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>19:30 hrs · Campus Central</span>
                             </div>
                         </div>
-                    </article>
+                    </div>
 
                     <!-- Evento 2 -->
-                    <article class="event-item-box scroll-item">
-                        <div class="event-pic">
+                    <div class="event-card-item reveal-scroll">
+                        <div class="event-cover-box">
                             <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=700&q=80&auto=format&fit=crop" alt="Grupos de Vida" loading="lazy">
-                            <div class="event-date-flag">
-                                <span class="d-day">18</span>
-                                <span class="d-month">AGO</span>
+                            <div class="big-date-chip">
+                                <span class="d-num">18</span>
+                                <span class="d-txt">AGO</span>
                             </div>
                         </div>
-                        <div class="event-content-body">
-                            <span class="event-genre">Comunidad</span>
-                            <h3 class="event-heading">Reuniones de Grupos de Vida</h3>
-                            <p class="event-summary">Espacios en casas distribuidas por Santa Cruz para conectar con personas afines y crecer espiritualmente.</p>
-                            <div class="event-loc">
-                                <span>📍 Distintas Zonas · 20:00 hrs</span>
+                        <div class="event-body-box">
+                            <span class="event-type-pill">COMUNIDAD</span>
+                            <h3 class="event-item-title">Reunión de Grupos de Vida</h3>
+                            <p class="event-item-desc">Encuentros en casas para cenar juntos, conversar sobre la Palabra y apoyarnos como familia.</p>
+                            <div class="event-location-row">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>20:00 hrs · Hogares en Santa Cruz</span>
                             </div>
                         </div>
-                    </article>
+                    </div>
 
                     <!-- Evento 3 -->
-                    <article class="event-item-box scroll-item">
-                        <div class="event-pic">
+                    <div class="event-card-item reveal-scroll">
+                        <div class="event-cover-box">
                             <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=700&q=80&auto=format&fit=crop" alt="Impacto Comunitario" loading="lazy">
-                            <div class="event-date-flag">
-                                <span class="d-day">22</span>
-                                <span class="d-month">AGO</span>
+                            <div class="big-date-chip">
+                                <span class="d-num">22</span>
+                                <span class="d-txt">AGO</span>
                             </div>
                         </div>
-                        <div class="event-content-body">
-                            <span class="event-genre">Voluntariado</span>
-                            <h3 class="event-heading">Impacto Solidario en la Ciudad</h3>
-                            <p class="event-summary">Jornada de ayuda humanitaria y brigadas de apoyo a comunidades vulnerables de nuestra región.</p>
-                            <div class="event-loc">
-                                <span>📍 Punto de Encuentro · 08:30 hrs</span>
+                        <div class="event-body-box">
+                            <span class="event-type-pill">VOLUNTARIADO</span>
+                            <h3 class="event-item-title">Jornada de Impacto Solidario</h3>
+                            <p class="event-item-desc">Saldremos a bendecir familias con alimentos, útiles y apoyo directo en zonas vulnerables.</p>
+                            <div class="event-location-row">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>08:30 hrs · Punto de Encuentro</span>
                             </div>
                         </div>
-                    </article>
+                    </div>
 
                     <!-- Evento 4 -->
-                    <article class="event-item-box scroll-item">
-                        <div class="event-pic">
-                            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=700&q=80&auto=format&fit=crop" alt="Fundamentos" loading="lazy">
-                            <div class="event-date-flag">
-                                <span class="d-day">25</span>
-                                <span class="d-month">AGO</span>
+                    <div class="event-card-item reveal-scroll">
+                        <div class="event-cover-box">
+                            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=700&q=80&auto=format&fit=crop" alt="Curso Fundamentos" loading="lazy">
+                            <div class="big-date-chip">
+                                <span class="d-num">25</span>
+                                <span class="d-txt">AGO</span>
                             </div>
                         </div>
-                        <div class="event-content-body">
-                            <span class="event-genre">Discipulado</span>
-                            <h3 class="event-heading">Taller: Fundamentos de la Fe</h3>
-                            <p class="event-summary">Cuatro sesiones diseñadas para profundizar en los cimientos bíblicos de tu caminar cristiano.</p>
-                            <div class="event-loc">
-                                <span>📍 Campus Norte · 18:00 hrs</span>
+                        <div class="event-body-box">
+                            <span class="event-type-pill">DISCIPULADO</span>
+                            <h3 class="event-item-title">Curso: Fundamentos de la Fe</h3>
+                            <p class="event-item-desc">Módulo práctico para nuevos creyentes que desean consolidar las bases de su vida cristiana.</p>
+                            <div class="event-location-row">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>18:00 hrs · Campus Norte</span>
                             </div>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- PLANES DE LECTURA DEVOCIONAL                           -->
+        <!-- PLANES DE LECTURA BÍBLICA (DIRECTO Y VISIBLE)          -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="page-section" id="lecturas">
-            <div class="wrap">
-                <div class="section-tag-header text-center">
-                    <span class="pre-title">CRECIMIENTO PERSONAL</span>
-                    <h2 class="main-title">Planes Devocionales de Lectura</h2>
-                    <p class="desc-text center-auto">
-                        Inicia hoy un hábito que transformará tu mente. Guías bíblicas prácticas preparadas por nuestro equipo pastoral.
+        <section class="section-block" id="lecturas">
+            <div class="container-grid">
+                <div class="block-header text-center">
+                    <span class="kicker-amber">CRECIMIENTO DIARIO</span>
+                    <h2 class="block-title">PLANES DE LECTURA DEVOCIONAL</h2>
+                    <p class="block-lead center-text">
+                        Comienza hoy mismo una rutina diaria de lectura con guías prácticas elaboradas para fortalecer tu fe paso a paso.
                     </p>
                 </div>
 
-                <div class="reading-editorial-grid">
-                    <!-- Devocional 1 -->
-                    <div class="reading-plan-card scroll-item">
-                        <div class="plan-img-holder">
+                <div class="reading-three-grid">
+                    <!-- Plan 1 -->
+                    <div class="reading-item-card reveal-scroll">
+                        <div class="reading-img-box">
                             <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=600&q=80&auto=format&fit=crop" alt="El Sermón del Monte" loading="lazy">
-                            <span class="plan-duration-badge">21 Días</span>
+                            <span class="reading-badge-amber">PLAN DE 21 DÍAS</span>
                         </div>
-                        <div class="plan-info">
-                            <h3 class="plan-h3">El Sermón del Monte</h3>
-                            <p class="plan-p">Las enseñanzas más revolucionarias de Jesús sobre las bienaventuranzas, la fe, la ansiedad y el perdón.</p>
-                            <a href="#contacto" class="plan-link-action">
-                                <span>Comenzar lectura</span>
+                        <div class="reading-content-box">
+                            <h3 class="reading-name">El Sermón del Monte</h3>
+                            <p class="reading-details">Las enseñanzas de Jesús explicadas de manera sencilla para vivir con paz, propósito y libertad.</p>
+                            <a href="#contacto" class="reading-action-link">
+                                <span>Comenzar este plan</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Devocional 2 -->
-                    <div class="reading-plan-card scroll-item">
-                        <div class="plan-img-holder">
+                    <!-- Plan 2 -->
+                    <div class="reading-item-card reveal-scroll">
+                        <div class="reading-img-box">
                             <img src="https://images.unsplash.com/photo-1506784693919-ef06d93c28d2?w=600&q=80&auto=format&fit=crop" alt="Salmos para el Alma" loading="lazy">
-                            <span class="plan-duration-badge">14 Días</span>
+                            <span class="reading-badge-amber">PLAN DE 14 DÍAS</span>
                         </div>
-                        <div class="plan-info">
-                            <h3 class="plan-h3">Salmos para el Alma</h3>
-                            <p class="plan-p">Oraciones sinceras y poemas inspirados que traerán consuelo, paz y fortaleza en momentos de prueba.</p>
-                            <a href="#contacto" class="plan-link-action">
-                                <span>Comenzar lectura</span>
+                        <div class="reading-content-box">
+                            <h3 class="reading-name">Salmos para el Alma</h3>
+                            <p class="reading-details">Oraciones inspiradoras para renovar tu mente y encontrar consuelo y fortaleza en Dios.</p>
+                            <a href="#contacto" class="reading-action-link">
+                                <span>Comenzar este plan</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Devocional 3 -->
-                    <div class="reading-plan-card scroll-item">
-                        <div class="plan-img-holder">
+                    <!-- Plan 3 -->
+                    <div class="reading-item-card reveal-scroll">
+                        <div class="reading-img-box">
                             <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=80&auto=format&fit=crop" alt="Fe en Acción" loading="lazy">
-                            <span class="plan-duration-badge">7 Días</span>
+                            <span class="reading-badge-amber">PLAN DE 7 DÍAS</span>
                         </div>
-                        <div class="plan-info">
-                            <h3 class="plan-h3">Fe en Acción Cotidiana</h3>
-                            <p class="plan-p">Herramientas basadas en la carta de Santiago para reflejar tu convicción en el hogar, el trabajo y los negocios.</p>
-                            <a href="#contacto" class="plan-link-action">
-                                <span>Comenzar lectura</span>
+                        <div class="reading-content-box">
+                            <h3 class="reading-name">Fe en Acción Cotidiana</h3>
+                            <p class="reading-details">Herramientas prácticas del libro de Santiago para reflejar tus convicciones en el trabajo y la familia.</p>
+                            <a href="#contacto" class="reading-action-link">
+                                <span>Comenzar este plan</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
                         </div>
@@ -345,67 +362,67 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- PREDICACIONES & SERMONES                               -->
+        <!-- PREDICACIONES / VIDEOS DE YOUTUBE                      -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="page-section section-soft" id="mensajes">
-            <div class="wrap">
-                <div class="section-row-head">
+        <section class="section-block section-darker" id="mensajes">
+            <div class="container-grid">
+                <div class="block-header-flex">
                     <div>
-                        <span class="pre-title">SERMONES EN LÍNEA</span>
-                        <h2 class="main-title">Mensajes &amp; Predicaciones</h2>
+                        <span class="kicker-amber">MENSAJES EN VIDEO</span>
+                        <h2 class="block-title">PREDICACIONES RECIENTES</h2>
                     </div>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-text-link">
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="link-view-all">
                         <span>Ver Canal de YouTube</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
-                <div class="sermon-editorial-grid">
+                <div class="sermon-cards-row">
                     <!-- Video 1 -->
-                    <div class="sermon-media-card scroll-item" data-youtube-id="dQw4w9WgXcQ">
-                        <div class="sermon-thumb-wrap">
+                    <div class="sermon-box reveal-scroll" data-youtube-id="dQw4w9WgXcQ">
+                        <div class="sermon-video-thumb">
                             <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=700&q=80&auto=format&fit=crop" alt="El Poder del Propósito" loading="lazy">
-                            <button class="sermon-play-pill" aria-label="Ver video">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                                <span>Reproducir</span>
+                            <button class="play-btn-amber" aria-label="Reproducir video">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                             </button>
+                            <span class="duration-tag">45 min</span>
                         </div>
-                        <div class="sermon-meta-info">
-                            <span class="sermon-date">11 AGOSTO 2024 · 45 MIN</span>
-                            <h3 class="sermon-title">El Poder del Propósito</h3>
-                            <p class="sermon-desc">Descubre la guía y paz de Dios cuando enfrentas etapas de cambios e incertidumbres en tu vida.</p>
+                        <div class="sermon-card-info">
+                            <span class="sermon-date-label">11 AGOSTO 2024</span>
+                            <h3 class="sermon-name-text">El Poder del Propósito</h3>
+                            <p class="sermon-desc-text">Descubre la guía y la dirección de Dios cuando atraviesas momentos de incertidumbre y cambios.</p>
                         </div>
                     </div>
 
                     <!-- Video 2 -->
-                    <div class="sermon-media-card scroll-item" data-youtube-id="dQw4w9WgXcQ">
-                        <div class="sermon-thumb-wrap">
+                    <div class="sermon-box reveal-scroll" data-youtube-id="dQw4w9WgXcQ">
+                        <div class="sermon-video-thumb">
                             <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=700&q=80&auto=format&fit=crop" alt="Fe Inquebrantable" loading="lazy">
-                            <button class="sermon-play-pill" aria-label="Ver video">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                                <span>Reproducir</span>
+                            <button class="play-btn-amber" aria-label="Reproducir video">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                             </button>
+                            <span class="duration-tag">52 min</span>
                         </div>
-                        <div class="sermon-meta-info">
-                            <span class="sermon-date">04 AGOSTO 2024 · 52 MIN</span>
-                            <h3 class="sermon-title">Fe Inquebrantable</h3>
-                            <p class="sermon-desc">Aprende a descansar firmemente en el poder de Dios frente a los desafíos que se presentan.</p>
+                        <div class="sermon-card-info">
+                            <span class="sermon-date-label">04 AGOSTO 2024</span>
+                            <h3 class="sermon-name-text">Fe Inquebrantable</h3>
+                            <p class="sermon-desc-text">Cómo mantener una confianza firme y victoriosa en las promesas de Dios día a día.</p>
                         </div>
                     </div>
 
                     <!-- Video 3 -->
-                    <div class="sermon-media-card scroll-item" data-youtube-id="dQw4w9WgXcQ">
-                        <div class="sermon-thumb-wrap">
+                    <div class="sermon-box reveal-scroll" data-youtube-id="dQw4w9WgXcQ">
+                        <div class="sermon-video-thumb">
                             <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=700&q=80&auto=format&fit=crop" alt="Construyendo sobre la Roca" loading="lazy">
-                            <button class="sermon-play-pill" aria-label="Ver video">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                                <span>Reproducir</span>
+                            <button class="play-btn-amber" aria-label="Reproducir video">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                             </button>
+                            <span class="duration-tag">48 min</span>
                         </div>
-                        <div class="sermon-meta-info">
-                            <span class="sermon-date">28 JULIO 2024 · 48 MIN</span>
-                            <h3 class="sermon-title">Construyendo sobre la Roca</h3>
-                            <p class="sermon-desc">Fundamentos sólidos para edificar matrimonios saludables, hijos con propósito y familias bendecidas.</p>
+                        <div class="sermon-card-info">
+                            <span class="sermon-date-label">28 JULIO 2024</span>
+                            <h3 class="sermon-name-text">Construyendo sobre la Roca</h3>
+                            <p class="sermon-desc-text">Fundamentos bíblicos indispensables para consolidar familias, matrimonios y vidas sanas.</p>
                         </div>
                     </div>
                 </div>
@@ -413,126 +430,129 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- CONTACTO & PASTORAL                                    -->
+        <!-- CONTACTO & PASTORAL (CONEXIÓN DIRECTA)                 -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="page-section" id="contacto">
-            <div class="wrap">
-                <div class="contact-editorial-frame scroll-item">
-                    <div class="contact-left-info">
-                        <span class="pre-title">CONEXIÓN PASTORAL</span>
-                        <h2 class="contact-head">Estamos aquí para orar por ti y escucharte</h2>
-                        <p class="contact-text">
-                            ¿Tienes alguna petición de oración, necesitas consejería o deseas integrarte a la iglesia? Escríbenos directamente o visítanos este domingo.
-                        </p>
+        <section class="section-block" id="contacto">
+            <div class="container-grid">
+                <div class="contact-card-container reveal-scroll">
+                    <div class="contact-two-columns">
+                        <!-- Columna Izquierda: Información Directa -->
+                        <div class="contact-info-panel">
+                            <span class="kicker-amber">ESTAMOS PARA ESCUCHARTE</span>
+                            <h2 class="contact-main-heading">¿NECESITAS ORACIÓN O TIENES PREGUNTAS?</h2>
+                            <p class="contact-summary">
+                                Nuestro equipo pastoral está disponible para apoyarte en oración, resolver tus consultas y darte la bienvenida a nuestra iglesia.
+                            </p>
 
-                        <div class="contact-points">
-                            <div class="c-point">
-                                <div class="c-point-icon">📞</div>
-                                <div>
-                                    <span class="c-point-label">Teléfono de la Iglesia</span>
-                                    <span class="c-point-val">+591 (3) 000-0000</span>
+                            <div class="contact-quick-list">
+                                <div class="c-item">
+                                    <span class="c-ico">📞</span>
+                                    <div>
+                                        <span class="c-label">Teléfono de Contacto</span>
+                                        <span class="c-val">+591 (3) 000-0000</span>
+                                    </div>
+                                </div>
+
+                                <div class="c-item">
+                                    <span class="c-ico">✉️</span>
+                                    <div>
+                                        <span class="c-label">Correo Electrónico</span>
+                                        <span class="c-val">contacto@ministeriovida.org</span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="c-point">
-                                <div class="c-point-icon">✉️</div>
-                                <div>
-                                    <span class="c-point-label">Correo Oficial</span>
-                                    <span class="c-point-val">contacto@ministeriovida.org</span>
-                                </div>
-                            </div>
+                            <!-- Botón WhatsApp Destacado -->
+                            <a href="https://wa.me/591XXXXXXXXX?text=Hola%20Ministerio%20Vida%2C%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-ws-prominent">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                <span>Chatear por WhatsApp con el Pastor</span>
+                            </a>
                         </div>
 
-                        <!-- Botón WhatsApp Destacado -->
-                        <a href="https://wa.me/591XXXXXXXXX?text=Hola%20Ministerio%20Vida%2C%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-ws-editorial">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            <span>Escribir por WhatsApp al Pastor</span>
-                        </a>
-                    </div>
+                        <!-- Columna Derecha: Formulario Rápido -->
+                        <div class="contact-form-panel">
+                            <form class="fast-prayer-form" id="contactForm">
+                                <h3 class="form-title-clean">Envíanos un Mensaje Directo</h3>
 
-                    <!-- Formulario -->
-                    <div class="contact-right-form">
-                        <form class="warm-form" id="contactForm">
-                            <h3 class="form-h3">Envíanos un Mensaje</h3>
-                            
-                            <div class="form-row">
-                                <label for="cName">Tu Nombre Completo</label>
-                                <input type="text" id="cName" name="name" class="clean-input" placeholder="Ej: Carolina Rojas" required>
-                            </div>
-
-                            <div class="form-cols-2">
-                                <div class="form-row">
-                                    <label for="cEmail">Correo Electrónico</label>
-                                    <input type="email" id="cEmail" name="email" class="clean-input" placeholder="carolina@email.com" required>
+                                <div class="form-input-group">
+                                    <label for="fName">Nombre Completo</label>
+                                    <input type="text" id="fName" name="name" class="dark-field" placeholder="Ej: Daniel Menacho" required>
                                 </div>
-                                <div class="form-row">
-                                    <label for="cPhone">Teléfono</label>
-                                    <input type="tel" id="cPhone" name="phone" class="clean-input" placeholder="+591 70000000">
+
+                                <div class="form-row-duo">
+                                    <div class="form-input-group">
+                                        <label for="fEmail">Correo Electrónico</label>
+                                        <input type="email" id="fEmail" name="email" class="dark-field" placeholder="daniel@ejemplo.com" required>
+                                    </div>
+                                    <div class="form-input-group">
+                                        <label for="fPhone">Teléfono / WhatsApp</label>
+                                        <input type="tel" id="fPhone" name="phone" class="dark-field" placeholder="+591 70000000">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-row">
-                                <label for="cMsg">Petición o Mensaje</label>
-                                <textarea id="cMsg" name="message" class="clean-textarea" rows="4" placeholder="Cuéntanos en qué podemos acompañarte u orar..." required></textarea>
-                            </div>
+                                <div class="form-input-group">
+                                    <label for="fMsg">¿Cómo podemos orar por ti o ayudarte?</label>
+                                    <textarea id="fMsg" name="message" class="dark-textarea" rows="4" placeholder="Escribe aquí tu petición o mensaje..." required></textarea>
+                                </div>
 
-                            <button type="submit" class="btn-form-submit">
-                                <span>Enviar Mensaje</span>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                            </button>
-                        </form>
+                                <button type="submit" class="btn-submit-amber">
+                                    <span>Enviar Mensaje</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- SEDES EN SANTA CRUZ                                    -->
+        <!-- SEDES Y HORARIOS EN SANTA CRUZ                         -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="page-section section-soft" id="sedes">
-            <div class="wrap">
-                <div class="section-tag-header">
-                    <span class="pre-title">NUESTRAS UBICACIONES</span>
-                    <h2 class="main-title">Encuentra una Sede Cerca de Ti</h2>
-                    <p class="desc-text">
-                        Te esperamos en nuestras dos sedes en Santa Cruz de la Sierra con estacionamiento y espacio especial para niños.
+        <section class="section-block section-darker" id="sedes">
+            <div class="container-grid">
+                <div class="block-header">
+                    <span class="kicker-amber">ENCUÉNTRANOS</span>
+                    <h2 class="block-title">NUESTRAS SEDES EN SANTA CRUZ</h2>
+                    <p class="block-lead">
+                        Ambas sedes cuentan con parqueo privado y espacios dedicados para el ministerio infantil Vida Kids.
                     </p>
                 </div>
 
-                <div class="campuses-grid">
-                    <!-- Sede 1 -->
-                    <div class="campus-card scroll-item">
-                        <div class="campus-badge-top">SEDE CENTRAL</div>
-                        <h3 class="campus-h3">Campus Central</h3>
-                        <div class="campus-info-row">
-                            <span class="c-icon">📍</span>
-                            <span>Av. Principal, Santa Cruz de la Sierra</span>
+                <div class="venues-two-cards">
+                    <!-- Sede Central -->
+                    <div class="venue-box-dark reveal-scroll">
+                        <div class="venue-status-chip">CAMPUS PRINCIPAL</div>
+                        <h3 class="venue-name-big">Campus Central</h3>
+                        <div class="venue-line">
+                            <span class="v-ico">📍</span>
+                            <span>Av. Principal, Santa Cruz de la Sierra, Bolivia</span>
                         </div>
-                        <div class="campus-info-row">
-                            <span class="c-icon">🕒</span>
-                            <span>Domingos: 09:00 AM &amp; 11:00 AM</span>
+                        <div class="venue-line">
+                            <span class="v-ico">🕒</span>
+                            <span><strong>Domingos:</strong> 09:00 AM &amp; 11:00 AM</span>
                         </div>
-                        <div class="campus-info-row">
-                            <span class="c-icon">👶</span>
-                            <span>Ministerio Infantil Vida Kids</span>
+                        <div class="venue-line">
+                            <span class="v-ico">👶</span>
+                            <span>Ministerio Infantil Vida Kids disponible</span>
                         </div>
                     </div>
 
-                    <!-- Sede 2 -->
-                    <div class="campus-card scroll-item">
-                        <div class="campus-badge-top">SEDE NORTE</div>
-                        <h3 class="campus-h3">Campus Norte</h3>
-                        <div class="campus-info-row">
-                            <span class="c-icon">📍</span>
-                            <span>Av. Beni &amp; 5to Anillo, Zona Norte</span>
+                    <!-- Sede Norte -->
+                    <div class="venue-box-dark reveal-scroll">
+                        <div class="venue-status-chip">ZONA NORTE</div>
+                        <h3 class="venue-name-big">Campus Norte</h3>
+                        <div class="venue-line">
+                            <span class="v-ico">📍</span>
+                            <span>Av. Beni &amp; 5to Anillo, Zona Norte, Santa Cruz</span>
                         </div>
-                        <div class="campus-info-row">
-                            <span class="c-icon">🕒</span>
-                            <span>Domingos: 10:00 AM</span>
+                        <div class="venue-line">
+                            <span class="v-ico">🕒</span>
+                            <span><strong>Domingos:</strong> 10:00 AM</span>
                         </div>
-                        <div class="campus-info-row">
-                            <span class="c-icon">👶</span>
-                            <span>Ministerio Infantil Vida Kids</span>
+                        <div class="venue-line">
+                            <span class="v-ico">👶</span>
+                            <span>Ministerio Infantil Vida Kids disponible</span>
                         </div>
                     </div>
                 </div>
@@ -541,20 +561,20 @@
     </main>
 
     <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- FOOTER ELEGANTE                                        -->
+    <!-- FOOTER OSCURO ELEGANTE                                 -->
     <!-- ═══════════════════════════════════════════════════════ -->
-    <footer class="editorial-footer">
-        <div class="wrap">
-            <div class="footer-layout">
-                <div class="f-brand">
-                    <div class="f-logo">
-                        <span class="f-logo-icon">✝</span>
-                        <span class="f-logo-name">MINISTERIO VIDA</span>
+    <footer class="main-dark-footer">
+        <div class="container-grid">
+            <div class="footer-layout-row">
+                <div class="f-info-section">
+                    <div class="f-brand-logo">
+                        <span class="f-cross">✝</span>
+                        <span class="f-name">MINISTERIO <strong>VIDA</strong></span>
                     </div>
-                    <p class="f-tag">
+                    <p class="f-statement">
                         Llevando esperanza, conectando personas y transformando vidas en el corazón de Santa Cruz, Bolivia.
                     </p>
-                    <div class="f-socials">
+                    <div class="f-social-buttons">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
                         <span>·</span>
                         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
@@ -565,8 +585,8 @@
                     </div>
                 </div>
 
-                <div class="f-links-grid">
-                    <div class="f-col">
+                <div class="f-nav-columns">
+                    <div class="f-col-item">
                         <h4>Iglesia</h4>
                         <ul>
                             <li><a href="#mision">Nuestra Misión</a></li>
@@ -576,7 +596,7 @@
                         </ul>
                     </div>
 
-                    <div class="f-col">
+                    <div class="f-col-item">
                         <h4>Recursos</h4>
                         <ul>
                             <li><a href="#mensajes">Sermones</a></li>
@@ -585,7 +605,7 @@
                         </ul>
                     </div>
 
-                    <div class="f-col">
+                    <div class="f-col-item">
                         <h4>Comunidad</h4>
                         <ul>
                             <li><a href="#contacto">Soy Nuevo</a></li>
@@ -596,9 +616,9 @@
                 </div>
             </div>
 
-            <div class="footer-sub-bar">
-                <p>© 2024 Ministerio Vida. Santa Cruz, Bolivia. Todos los derechos reservados.</p>
-                <div class="footer-sub-links">
+            <div class="footer-copy-bar">
+                <p>© 2024 Ministerio Vida. Santa Cruz de la Sierra, Bolivia. Todos los derechos reservados.</p>
+                <div class="footer-copy-links">
                     <a href="#">Privacidad</a>
                     <a href="#">Términos</a>
                     <a href="#contacto">Contacto</a>

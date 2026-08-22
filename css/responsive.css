@@ -1,37 +1,31 @@
 /* ==========================================================================
-   MINISTERIO VIDA — RESPONSIVE DESIGN (WARM EDITORIAL)
+   MINISTERIO VIDA — RESPONSIVE MEDIA QUERIES (DARK HIGH CONTRAST)
    ========================================================================== */
 
 /* ─── TABLETS HORIZONTAL (max-width: 1024px) ─── */
 @media (max-width: 1024px) {
-  .hero-wrapper {
+  .hero-big-title {
+    font-size: 46px;
+  }
+
+  .three-pillars-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .events-grid-clean {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sermon-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-two-columns {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .hero-display-title {
-    font-size: 48px;
-  }
-
-  .editorial-cards-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .events-magazine-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sermon-editorial-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-editorial-frame {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 36px;
-  }
-
-  .footer-layout {
+  .footer-layout-row {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -39,116 +33,129 @@
 
 /* ─── TABLETS VERTICAL & MÓVILES (max-width: 768px) ─── */
 @media (max-width: 768px) {
-  .wrap, .nav-shell {
+  .container-grid {
     padding: 0 20px;
   }
 
-  .nav-pill-menu,
-  .nav-cta-wrap .btn-editorial-gold {
+  .main-navbar {
+    padding: 14px 20px;
+  }
+
+  .nav-link-list,
+  .nav-action-area .btn-glow-gold {
     display: none;
   }
 
-  .mobile-menu-btn {
+  .mobile-toggle-button {
     display: flex;
   }
 
-  .editorial-hero {
-    padding: 110px 0 60px 0;
+  .hero-high-impact {
+    padding-top: 110px;
+    padding-bottom: 60px;
   }
 
-  .hero-wrapper {
-    padding: 0 20px;
-  }
-
-  .hero-display-title {
-    font-size: 38px;
+  .hero-big-title {
+    font-size: 36px;
     letter-spacing: -0.5px;
   }
 
-  .hero-p {
+  .hero-easy-read {
     font-size: 16px;
   }
 
-  .page-section {
+  .hero-quick-points {
+    flex-direction: column;
+    gap: 12px;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    padding: 20px;
+  }
+
+  .q-sep {
+    display: none;
+  }
+
+  .section-block {
     padding: 70px 0;
   }
 
-  .main-title {
+  .block-title {
     font-size: 30px;
   }
 
-  .section-row-head {
+  .block-header-flex {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
 
-  .events-magazine-grid {
+  .events-grid-clean {
     grid-template-columns: 1fr;
   }
 
-  .reading-editorial-grid {
+  .reading-three-grid {
     grid-template-columns: 1fr;
   }
 
-  .sermon-editorial-grid {
+  .sermon-cards-row {
     grid-template-columns: 1fr;
   }
 
-  .campuses-grid {
+  .venues-two-cards {
     grid-template-columns: 1fr;
   }
 
-  .form-cols-2 {
+  .contact-card-container {
+    padding: 28px 20px;
+  }
+
+  .contact-main-heading {
+    font-size: 28px;
+  }
+
+  .form-row-duo {
     grid-template-columns: 1fr;
   }
 
-  .contact-editorial-frame {
-    padding: 24px;
-  }
-
-  .f-links-grid {
+  .f-nav-columns {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  .footer-sub-bar {
+  .footer-copy-bar {
     flex-direction: column;
     gap: 12px;
     text-align: center;
   }
 
-  .footer-sub-links {
+  .footer-copy-links {
     justify-content: center;
   }
 }
 
 /* ─── SMARTPHONES PEQUEÑOS (max-width: 480px) ─── */
 @media (max-width: 480px) {
-  .hero-display-title {
-    font-size: 32px;
+  .hero-big-title {
+    font-size: 30px;
   }
 
-  .hero-btn-group {
+  .hero-cta-flex {
     flex-direction: column;
     width: 100%;
   }
 
-  .btn-hero-primary,
-  .btn-hero-secondary {
+  .btn-large-whatsapp,
+  .btn-large-outline {
     width: 100%;
     justify-content: center;
   }
 
-  .main-title {
-    font-size: 26px;
+  .pillar-card-dark {
+    padding: 24px 20px;
   }
 
-  .clean-pillar-card {
-    padding: 24px;
-  }
-
-  .campus-card {
-    padding: 24px;
+  .venue-box-dark {
+    padding: 24px 20px;
   }
 }
