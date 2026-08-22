@@ -1,74 +1,70 @@
 /**
- * js/main.js
- * Funcionalidades principales para la página web de Ministerio Vida.
- * Tema oscuro con acentos en amarillo dorado.
+ * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL
+ * Animaciones de scroll, navegación flotante y micro-interacciones
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. NAVBAR SCROLL EFFECT
-    const navbar = document.querySelector('.navbar');
+    // 1. NAVBAR SCROLL EFFECT (Transición de transparencia a fondo oscuro glass)
+    const headerNav = document.querySelector('.header-nav');
     
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+    const handleScroll = () => {
+        if (window.scrollY > 40) {
+            headerNav?.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            headerNav?.classList.remove('scrolled');
         }
-    });
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-    // 2. MOBILE MENU TOGGLE
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const body = document.body;
+    // 2. MENÚ MÓVIL INTERACTIVO
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
 
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
-            hamburger.classList.toggle('active');
+            const isOpen = hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            
-            // Prevenir scroll
-            if (mobileMenu.classList.contains('active')) {
-                body.style.overflow = 'hidden';
-            } else {
-                body.style.overflow = '';
-            }
+            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
-        // Click en link del menu cierra el menu
+        // Cerrar menú móvil al hacer clic en cualquier enlace
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             });
         });
 
-        // Click fuera del menu lo cierra
+        // Cerrar menú al hacer clic fuera
         document.addEventListener('click', (e) => {
             if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
                 hamburger.classList.remove('active');
                 mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             }
         });
     }
 
-    // 3. SMOOTH SCROLL
+    // 3. SCROLL SUAVE Y OFFSET PRECISO PARA ENLACES ANCLA
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (!targetId || targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                
-                // Offset para el navbar fijo (aprox 80px)
-                const headerOffset = 80;
+                const headerOffset = 90;
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
                 window.scrollTo({
                     top: offsetPosition,
@@ -78,96 +74,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. SCROLL ANIMATIONS (Intersection Observer)
-    const animOptions = {
+    // 4. ANIMACIONES AL HACER SCROLL (INTERSECTION OBSERVER)
+    const scrollObserverOptions = {
         root: null,
-        rootMargin: '0px 0px -50px 0px',
+        rootMargin: '0px 0px -80px 0px',
         threshold: 0.1
     };
 
-    const animObserver = new IntersectionObserver((entries, observer) => {
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Opcional: dejar de observar una vez visible
-                // observer.unobserve(entry.target);
+                entry.target.classList.add('is-visible');
+                // Dejar de observar una vez animado para mejor rendimiento
+                observer.unobserve(entry.target);
             }
         });
-    }, animOptions);
+    }, scrollObserverOptions);
 
-    // Preparar elementos que no tengan las clases (opcional/según requerimiento)
-    // Aqui asumimos que el HTML ya tiene .fade-in y .slide-up en los elementos.
-    document.querySelectorAll('.fade-in, .slide-up').forEach(el => {
-        animObserver.observe(el);
-    });
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => scrollObserver.observe(el));
 
-    // 5. ACTIVE NAV LINK
+    // 5. RESALTAR ENLACE ACTIVO SEGÚN LA SECCIÓN EN PANTALLA
     const sections = document.querySelectorAll('section[id]');
-    
-    const navObserverOptions = {
-        root: null,
-        rootMargin: '-50% 0px -50% 0px', // Activar cuando la seccion este al medio
-        threshold: 0
-    };
+    const navLinks = document.querySelectorAll('.nav-links .nav-link');
 
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                 });
             }
         });
-    }, navObserverOptions);
+    }, { rootMargin: '-40% 0px -60% 0px' });
 
     sections.forEach(section => navObserver.observe(section));
 
-    // 6. ANNOUNCEMENT BAR DISMISS
-    const announcementBar = document.querySelector('.announcement-bar');
-    if (announcementBar) {
-        const isDismissed = sessionStorage.getItem('announcementDismissed');
-        if (isDismissed) {
-            announcementBar.style.display = 'none';
-        } else {
-            const closeBtn = announcementBar.querySelector('.close-btn');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
-                    announcementBar.style.display = 'none';
-                    sessionStorage.setItem('announcementDismissed', 'true');
-                });
-            }
-        }
-    }
-
-    // 7. CONTACT FORM HANDLER
-    const contactForm = document.querySelector('.contact-form');
+    // 6. FORMULARIO DE CONTACTO INTERACTIVO
+    const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             
-            // Validacion basica
-            let isValid = true;
-            const inputs = contactForm.querySelectorAll('input, textarea');
-            inputs.forEach(input => {
-                if (input.hasAttribute('required') && !input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = 'red';
-                } else {
-                    input.style.borderColor = 'var(--border)';
-                }
-            });
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Enviando...</span>`;
 
-            if (isValid) {
-                // Placeholder para envio al backend
-                alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            setTimeout(() => {
+                submitBtn.innerHTML = `<span>¡Mensaje Enviado con Éxito! ✓</span>`;
+                submitBtn.style.background = '#25D366';
+                submitBtn.style.color = '#fff';
                 contactForm.reset();
-            } else {
-                alert('Por favor, completa todos los campos requeridos.');
-            }
+
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.style.color = '';
+                }, 4000);
+            }, 800);
         });
     }
 });

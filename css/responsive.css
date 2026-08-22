@@ -1,58 +1,62 @@
 /* ==========================================================================
-   RESPONSIVE - Media Queries
-   Página web Ministerio Vida
+   MINISTERIO VIDA — RESPONSIVE DESIGN (MEDIA QUERIES)
+   Adaptabilidad fluida en Desktop, Tablets y Smartphones
    ========================================================================== */
 
-/* ==========================================================================
-   TABLET LANDSCAPE (max-width: 1024px)
-   ========================================================================== */
+/* ─── PANTALLAS MEDIANAS / TABLETS HORIZONTAL (max-width: 1024px) ─── */
 @media (max-width: 1024px) {
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .mission-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .mission-card.featured {
-    grid-row: auto;
-    min-height: 320px;
-  }
-
   .hero-title {
     font-size: 60px;
   }
 
-  .section-title {
-    font-size: 40px;
+  .pillars-bento {
+    grid-template-columns: 1fr;
   }
 
-  .footer-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+  .bento-hero {
+    grid-row: auto;
+    min-height: 380px;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .videos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .contact-grid {
+  .contact-grid-inner {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-}
 
-/* ==========================================================================
-   TABLET PORTRAIT (max-width: 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-  /* Navegación */
-  .nav-links {
-    display: none;
+  .locations-bento {
+    grid-template-columns: 1fr;
   }
 
-  .nav-cta {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* ─── TABLETS VERTICAL & MÓVILES GRANDES (max-width: 768px) ─── */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .header-nav {
+    padding: 12px 0;
+  }
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .nav-links,
+  .nav-actions .btn-primary-minimal {
     display: none;
   }
 
@@ -60,48 +64,43 @@
     display: flex;
   }
 
-  /* Hero */
-  .hero-title {
-    font-size: 48px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-  }
-
-  .hero-content {
-    padding-top: 120px;
-  }
-
-  .hero-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    padding: 6px 12px;
-  }
-
-  .hero-scroll {
-    display: none;
-  }
-
-  /* Secciones */
-  .section-title {
-    font-size: 34px;
-  }
-
-  .section-description {
-    font-size: 15px;
-  }
-
-  .mission, .events, .reading-plans, .videos, .contact, .locations {
+  .section {
     padding: 80px 0;
   }
 
-  /* Grids a 1 columna */
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .hero-title {
+    font-size: 46px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .section-heading {
+    font-size: 34px;
+  }
+
+  .section-headline-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .section-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
   .events-grid {
     grid-template-columns: 1fr;
   }
 
-  .plans-grid {
+  .reading-grid {
     grid-template-columns: 1fr;
   }
 
@@ -109,166 +108,77 @@
     grid-template-columns: 1fr;
   }
 
-  .locations-grid {
+  .contact-card-wrapper {
+    padding: 32px 20px;
+  }
+
+  .contact-heading {
+    font-size: 32px;
+  }
+
+  .form-row-duo {
     grid-template-columns: 1fr;
   }
 
-  .location-map {
-    min-height: 300px;
+  .scroll-indicator {
+    display: none;
   }
 
-  /* Section Headers */
-  .mission .section-header {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .events .section-header,
-  .videos .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  /* Footer */
-  .footer-content {
+  .footer-top-grid {
     grid-template-columns: 1fr;
     gap: 36px;
   }
 
-  .footer-brand {
-    max-width: 100%;
-  }
-
-  .footer-bottom {
+  .footer-bottom-bar {
     flex-direction: column;
     gap: 16px;
     text-align: center;
   }
 
-  .footer-links {
+  .footer-bottom-links {
     justify-content: center;
   }
+}
 
-  /* Botones Hero */
-  .hero-buttons {
+/* ─── SMARTPHONES PEQUEÑOS (max-width: 480px) ─── */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 38px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-actions {
     flex-direction: column;
     width: 100%;
   }
 
-  .hero-buttons .btn {
+  .hero-actions .btn {
     width: 100%;
-    justify-content: center;
   }
 
-  /* Anuncio */
-  .announcement-bar {
-    font-size: 12px;
-    padding: 8px 10px;
-  }
-
-  /* Form */
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-form {
-    padding: 28px;
+  .service-pill {
+    width: 100%;
     border-radius: var(--radius-lg);
   }
-}
 
-/* ==========================================================================
-   MOBILE (max-width: 480px)
-   ========================================================================== */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 38px;
-  }
-
-  .section-title {
+  .section-heading {
     font-size: 28px;
   }
 
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 2.5px;
-  }
-
-  .container {
-    padding: 0 16px;
-  }
-
-  .btn {
-    padding: 12px 20px;
-    font-size: 13px;
-  }
-
-  .btn-lg {
-    padding: 14px 24px;
-    font-size: 14px;
-  }
-
-  .mission-card {
+  .bento-card {
     padding: 24px;
   }
 
-  .mission-card.featured {
-    min-height: 280px;
+  .bento-hero {
     padding: 28px;
+    min-height: 320px;
   }
 
-  .event-card-content {
-    padding: 16px;
-  }
-
-  .plan-card-content {
-    padding: 20px;
-  }
-
-  .contact-form {
+  .location-box {
     padding: 24px;
   }
 
-  .location-card {
-    padding: 24px;
-  }
-
-  .footer {
-    padding: 48px 0 0;
-  }
-
-  .announcement-bar {
-    font-size: 11px;
-    padding: 6px 8px;
-  }
-
-  .nav-logo {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-
-  .nav-logo svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .hero-subtitle {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .section-header {
-    margin-bottom: 40px;
-  }
-
-  .video-play-btn {
-    width: 56px;
-    height: 56px;
-  }
-
-  .video-play-btn svg {
-    width: 22px;
-    height: 22px;
+  .location-map-frame {
+    min-height: 280px;
   }
 }

@@ -1,99 +1,152 @@
 /* ==========================================================================
-   ANIMATIONS & EFFECTS
+   MINISTERIO VIDA — ANIMACIONES Y MICRO-INTERACCIONES PROFESIONALES
+   Curvas de aceleración cinematográficas (Cubic-Bezier) y transiciones fluidas
    ========================================================================== */
 
-/* 1. Animation Classes */
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
+/* ─── KEYFRAMES ─── */
 
-.fade-in.visible {
-  opacity: 1;
-}
-
-.slide-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.slide-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger Delays */
-.slide-up:nth-child(2) {
-  transition-delay: 0.1s;
-}
-
-.slide-up:nth-child(3) {
-  transition-delay: 0.2s;
-}
-
-.slide-up:nth-child(4) {
-  transition-delay: 0.3s;
-}
-
-/* 2. Keyframes */
-@keyframes fadeInUp {
-  from {
+/* Revelación suave desde abajo */
+@keyframes revealUp {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(32px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes pulse {
+/* Revelación con ligero desenfoque */
+@keyframes blurReveal {
   0% {
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.7);
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* Pulso sutil para puntos dorados activos */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(229, 169, 60, 0.7);
   }
   70% {
-    transform: translate(-50%, -50%) scale(1.05);
-    box-shadow: 0 0 0 10px rgba(212, 160, 23, 0);
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(229, 169, 60, 0);
   }
   100% {
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 0 0 rgba(212, 160, 23, 0);
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(229, 169, 60, 0);
   }
 }
 
-@keyframes shimmer {
+/* Animación sutil de zoom en el fondo Hero */
+@keyframes subtleZoom {
   0% {
-    background-position: -1000px 0;
+    transform: scale(1.02);
   }
   100% {
-    background-position: 1000px 0;
+    transform: scale(1.1);
   }
 }
 
-/* 3. Hover Transitions Extras */
-.nav-links a {
-  position: relative;
+/* Desplazamiento del scroll mouse */
+@keyframes scrollWheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
 }
 
-.nav-links a::after {
+/* ─── CLASES DE ANIMACIÓN INICIAL (HERO) ─── */
+.animate-reveal {
+  opacity: 0;
+  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* ─── CLASES DE ANIMACIÓN POR SCROLL (INTERSECTION OBSERVER) ─── */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays escalonados para elementos dentro del mismo contenedor */
+.pillars-bento .bento-card:nth-child(1) { transition-delay: 50ms; }
+.pillars-bento .bento-card:nth-child(2) { transition-delay: 150ms; }
+.pillars-bento .bento-card:nth-child(3) { transition-delay: 250ms; }
+
+.events-grid .event-card-modern:nth-child(1) { transition-delay: 50ms; }
+.events-grid .event-card-modern:nth-child(2) { transition-delay: 150ms; }
+.events-grid .event-card-modern:nth-child(3) { transition-delay: 250ms; }
+.events-grid .event-card-modern:nth-child(4) { transition-delay: 350ms; }
+
+.reading-grid .reading-card:nth-child(1) { transition-delay: 50ms; }
+.reading-grid .reading-card:nth-child(2) { transition-delay: 150ms; }
+.reading-grid .reading-card:nth-child(3) { transition-delay: 250ms; }
+
+.videos-grid .video-card-clean:nth-child(1) { transition-delay: 50ms; }
+.videos-grid .video-card-clean:nth-child(2) { transition-delay: 150ms; }
+.videos-grid .video-card-clean:nth-child(3) { transition-delay: 250ms; }
+
+/* ─── EFECTOS HOVER DINÁMICOS ─── */
+.bento-card,
+.event-card-modern,
+.reading-card,
+.video-card-clean,
+.location-box {
+  will-change: transform, border-color, box-shadow;
+}
+
+/* Efecto brillo en botones dorados */
+.btn-gold-glow,
+.btn-gold-solid {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-glow::after,
+.btn-gold-solid::after {
   content: '';
   position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: var(--accent);
-  transition: width 0.3s ease;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.6s ease;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
-
-/* Video play button pulse effect on hover if desired */
-.video-card:hover .video-play-btn {
-  animation: pulse 1.5s infinite;
+.btn-gold-glow:hover::after,
+.btn-gold-solid:hover::after {
+  transform: rotate(30deg) translateX(100%);
 }
