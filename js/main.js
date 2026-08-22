@@ -3,49 +3,56 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. LUZ INTERACTIVA DINÁMICA DE FONDO (Spotlight / Aura de Luz con física fluida LERP)
-    const glow = document.getElementById('interactiveGlow');
-    if (glow) {
-        let targetX = window.innerWidth / 2;
-        let targetY = window.innerHeight / 2.5;
-        let currentX = targetX;
-        let currentY = targetY;
-
-        // Capturar movimiento del ratón / puntero
-        const updatePointer = (clientX, clientY) => {
-            targetX = clientX;
-            targetY = clientY;
-        };
-
-        window.addEventListener('pointermove', (e) => {
-            updatePointer(e.clientX, e.clientY);
-        }, { passive: true });
-
-        window.addEventListener('touchmove', (e) => {
-            if (e.touches.length > 0) {
-                updatePointer(e.touches[0].clientX, e.touches[0].clientY);
-            }
-        }, { passive: true });
-
-        // Al hacer scroll, la luz reacciona suavemente con el desplazamiento
+    // 0. LUZ SOLAR CELESTIAL DINÁMICA (Rayo de sol desde la esquina superior que reacciona al scroll)
+    const sunbeam = document.getElementById('sunbeamLight');
+    if (sunbeam) {
         let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            const deltaY = window.scrollY - lastScrollY;
-            targetY = Math.max(50, Math.min(window.innerHeight - 50, targetY - deltaY * 0.25));
-            lastScrollY = window.scrollY;
-        }, { passive: true });
+        let scrollVelocity = 0;
+        let targetOpacity = 0.85;
+        let currentOpacity = 0.85;
+        let targetScale = 1;
+        let currentScale = 1;
+        let targetAngle = 0;
+        let currentAngle = 0;
 
-        // Loop de renderizado continuo a 60fps con inercia elegante
-        const animateGlow = () => {
-            currentX += (targetX - currentX) * 0.085;
-            currentY += (targetY - currentY) * 0.085;
+        const handleScrollSun = () => {
+            const scrollPos = window.scrollY;
+            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const scrollRatio = Math.min(scrollPos / maxScroll, 1);
 
-            glow.style.setProperty('--mouse-x', `${currentX.toFixed(1)}px`);
-            glow.style.setProperty('--mouse-y', `${currentY.toFixed(1)}px`);
+            // Medir la velocidad del scroll
+            const delta = scrollPos - lastScrollY;
+            scrollVelocity = Math.min(Math.abs(delta), 80);
+            lastScrollY = scrollPos;
 
-            requestAnimationFrame(animateGlow);
+            // Al hacer scroll/movimiento, la luz se intensifica y expande
+            const velocityIntensity = (scrollVelocity / 80) * 0.45;
+            
+            // Con el scroll se va difuminando suavemente hacia el resto de la página
+            targetOpacity = Math.max(0.35, 0.9 - (scrollRatio * 0.4) + velocityIntensity);
+            targetScale = 1 + (scrollRatio * 0.45) + (velocityIntensity * 0.25);
+            targetAngle = (scrollRatio * 8) + (delta > 0 ? 2 : -2);
         };
-        animateGlow();
+
+        window.addEventListener('scroll', handleScrollSun, { passive: true });
+        handleScrollSun();
+
+        // Loop a 60 FPS con amortiguación suave tipo física
+        const renderSunbeam = () => {
+            scrollVelocity *= 0.90; // Amortiguación de velocidad
+
+            currentOpacity += (targetOpacity - currentOpacity) * 0.08;
+            currentScale += (targetScale - currentScale) * 0.08;
+            currentAngle += (targetAngle - currentAngle) * 0.06;
+
+            sunbeam.style.setProperty('--sun-opacity', currentOpacity.toFixed(3));
+            sunbeam.style.setProperty('--sun-scale', currentScale.toFixed(3));
+            sunbeam.style.setProperty('--beam-scale', (currentScale * 1.08).toFixed(3));
+            sunbeam.style.setProperty('--beam-angle', `${currentAngle.toFixed(2)}deg`);
+
+            requestAnimationFrame(renderSunbeam);
+        };
+        renderSunbeam();
     }
 
     // 1. Header scroll effect

@@ -69,24 +69,75 @@ body {
   position: relative;
 }
 
-/* ─── LUZ INTERACTIVA DELANTE DEL CONTENIDO E IMÁGENES (SPOTLIGHT TRANSPARENTE) ─── */
-.interactive-glow-bg {
+/* ─── LUZ CELESTIAL / RAYO DE SOL DESDE LA ESQUINA SUPERIOR ─── */
+.sunbeam-light-container {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none !important;
-  z-index: 99; /* Por delante de imágenes y tarjetas */
-  background: radial-gradient(
-    580px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.14) 0%,
-    rgba(245, 158, 11, 0.12) 20%,
-    rgba(245, 158, 11, 0.04) 45%,
-    transparent 70%
-  );
+  z-index: 99; /* Por encima de fotos y secciones, transparente */
+  overflow: hidden;
   mix-blend-mode: screen;
-  transition: opacity 0.3s ease;
-  will-change: background;
+  opacity: var(--sun-opacity, 0.85);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Foco / Fuente de luz solar en la esquina superior derecha */
+.sun-flare-origin {
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 240, 0.55) 0%,
+    rgba(255, 220, 140, 0.4) 20%,
+    rgba(245, 158, 11, 0.25) 45%,
+    rgba(245, 158, 11, 0.08) 65%,
+    transparent 80%
+  );
+  filter: blur(45px);
+  transform: scale(var(--sun-scale, 1));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Cono diagonal de haz de luz que atraviesa la pantalla */
+.sun-ray-beam {
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 180vw;
+  height: 180vh;
+  background: conic-gradient(
+    from 210deg at 92% 0%,
+    transparent 0deg,
+    rgba(255, 245, 210, 0.08) 12deg,
+    rgba(255, 225, 130, 0.22) 25deg,
+    rgba(255, 250, 235, 0.28) 32deg,
+    rgba(245, 158, 11, 0.18) 42deg,
+    rgba(245, 158, 11, 0.05) 55deg,
+    transparent 70deg
+  );
+  filter: blur(40px);
+  transform: scale(var(--beam-scale, 1)) rotate(var(--beam-angle, 0deg));
+  transform-origin: 92% 0%;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Difusión ambiental cálida en la atmósfera */
+.sun-ambient-dust {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    1100px 850px at 85% 10%,
+    rgba(245, 158, 11, 0.12) 0%,
+    rgba(245, 158, 11, 0.04) 45%,
+    transparent 75%
+  );
 }
 
 main, section, footer {
