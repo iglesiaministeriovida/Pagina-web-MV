@@ -69,20 +69,20 @@ body {
   position: relative;
 }
 
-/* ─── LUZ INTERACTIVA DINÁMICA DE FONDO (ORIVEX SPOTLIGHT) ─── */
+/* ─── LUZ INTERACTIVA DELANTE DEL CONTENIDO E IMÁGENES (SPOTLIGHT TRANSPARENTE) ─── */
 .interactive-glow-bg {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none;
-  z-index: 1;
+  pointer-events: none !important;
+  z-index: 99; /* Por delante de imágenes y tarjetas */
   background: radial-gradient(
-    700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(245, 158, 11, 0.14) 0%,
-    rgba(245, 158, 11, 0.05) 35%,
-    rgba(245, 158, 11, 0.015) 55%,
-    transparent 75%
+    580px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(245, 158, 11, 0.12) 20%,
+    rgba(245, 158, 11, 0.04) 45%,
+    transparent 70%
   );
   mix-blend-mode: screen;
   transition: opacity 0.3s ease;
