@@ -3,58 +3,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. LUZ SOLAR CELESTIAL DINÁMICA (Rayo de sol desde la esquina superior que reacciona al scroll)
-    const sunbeam = document.getElementById('sunbeamLight');
-    if (sunbeam) {
-        let lastScrollY = window.scrollY;
-        let scrollVelocity = 0;
-        let targetOpacity = 0.25; // 25% de opacidad base
-        let currentOpacity = 0.25;
-        let targetScale = 1;
-        let currentScale = 1;
-        let targetAngle = 0;
-        let currentAngle = 0;
-
-        const handleScrollSun = () => {
-            const scrollPos = window.scrollY;
-            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-            const scrollRatio = Math.min(scrollPos / maxScroll, 1);
-
-            // Medir la velocidad del scroll
-            const delta = scrollPos - lastScrollY;
-            scrollVelocity = Math.min(Math.abs(delta), 80);
-            lastScrollY = scrollPos;
-
-            // Al hacer scroll/movimiento, leve variación entre 20% y 30% de opacidad
-            const velocityIntensity = (scrollVelocity / 80) * 0.08;
-            
-            // Se mantiene siempre sutil y transparente (entre 0.18 y 0.30)
-            targetOpacity = Math.max(0.18, Math.min(0.30, 0.26 - (scrollRatio * 0.08) + velocityIntensity));
-            targetScale = 1 + (scrollRatio * 0.35) + (velocityIntensity * 0.15);
-            targetAngle = (scrollRatio * 6) + (delta > 0 ? 1.5 : -1.5);
-        };
-
-        window.addEventListener('scroll', handleScrollSun, { passive: true });
-        handleScrollSun();
-
-        // Loop a 60 FPS con amortiguación suave tipo física
-        const renderSunbeam = () => {
-            scrollVelocity *= 0.90; // Amortiguación de velocidad
-
-            currentOpacity += (targetOpacity - currentOpacity) * 0.08;
-            currentScale += (targetScale - currentScale) * 0.08;
-            currentAngle += (targetAngle - currentAngle) * 0.06;
-
-            sunbeam.style.setProperty('--sun-opacity', currentOpacity.toFixed(3));
-            sunbeam.style.setProperty('--sun-scale', currentScale.toFixed(3));
-            sunbeam.style.setProperty('--beam-scale', (currentScale * 1.08).toFixed(3));
-            sunbeam.style.setProperty('--beam-angle', `${currentAngle.toFixed(2)}deg`);
-
-            requestAnimationFrame(renderSunbeam);
-        };
-        renderSunbeam();
-    }
-
     // 1. Header scroll effect
     const header = document.querySelector('.orivex-header');
     const handleScroll = () => {

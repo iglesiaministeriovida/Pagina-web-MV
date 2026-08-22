@@ -69,77 +69,6 @@ body {
   position: relative;
 }
 
-/* ─── LUZ CELESTIAL / RAYO DE SOL DESDE LA ESQUINA SUPERIOR ─── */
-.sunbeam-light-container {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none !important;
-  z-index: 99; /* Por encima de fotos y secciones, transparente */
-  overflow: hidden;
-  mix-blend-mode: screen;
-  opacity: var(--sun-opacity, 0.25); /* Transparencia suave al 20% - 30% */
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
-}
-
-/* Foco / Fuente de luz solar en la esquina superior derecha */
-.sun-flare-origin {
-  position: absolute;
-  top: -120px;
-  right: -80px;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 240, 0.55) 0%,
-    rgba(255, 220, 140, 0.4) 20%,
-    rgba(245, 158, 11, 0.25) 45%,
-    rgba(245, 158, 11, 0.08) 65%,
-    transparent 80%
-  );
-  filter: blur(45px);
-  transform: scale(var(--sun-scale, 1));
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Cono diagonal de haz de luz que atraviesa la pantalla */
-.sun-ray-beam {
-  position: absolute;
-  top: -150px;
-  right: -100px;
-  width: 180vw;
-  height: 180vh;
-  background: conic-gradient(
-    from 210deg at 92% 0%,
-    transparent 0deg,
-    rgba(255, 245, 210, 0.08) 12deg,
-    rgba(255, 225, 130, 0.22) 25deg,
-    rgba(255, 250, 235, 0.28) 32deg,
-    rgba(245, 158, 11, 0.18) 42deg,
-    rgba(245, 158, 11, 0.05) 55deg,
-    transparent 70deg
-  );
-  filter: blur(40px);
-  transform: scale(var(--beam-scale, 1)) rotate(var(--beam-angle, 0deg));
-  transform-origin: 92% 0%;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Difusión ambiental cálida en la atmósfera */
-.sun-ambient-dust {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    1100px 850px at 85% 10%,
-    rgba(245, 158, 11, 0.12) 0%,
-    rgba(245, 158, 11, 0.04) 45%,
-    transparent 75%
-  );
-}
-
 main, section, footer {
   position: relative;
   z-index: 2;
@@ -474,13 +403,15 @@ button, input, textarea {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  opacity: 0.45; /* Imagen sutilmente visible */
+  filter: brightness(0.9) contrast(1.1);
 }
 
 .hero-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(9,10,13,0.75) 0%, rgba(9,10,13,0.92) 75%, #090A0D 100%),
-              linear-gradient(to right, rgba(9,10,13,0.95) 0%, rgba(9,10,13,0.5) 60%, rgba(9,10,13,0.9) 100%);
+  background: linear-gradient(to bottom, rgba(9,10,13,0.50) 0%, rgba(9,10,13,0.75) 65%, #090A0D 100%),
+              linear-gradient(to right, rgba(9,10,13,0.85) 0%, rgba(9,10,13,0.30) 50%, rgba(9,10,13,0.85) 100%);
 }
 
 .hero-content-area {
