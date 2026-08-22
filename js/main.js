@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sunbeam) {
         let lastScrollY = window.scrollY;
         let scrollVelocity = 0;
-        let targetOpacity = 0.85;
-        let currentOpacity = 0.85;
+        let targetOpacity = 0.25; // 25% de opacidad base
+        let currentOpacity = 0.25;
         let targetScale = 1;
         let currentScale = 1;
         let targetAngle = 0;
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollVelocity = Math.min(Math.abs(delta), 80);
             lastScrollY = scrollPos;
 
-            // Al hacer scroll/movimiento, la luz se intensifica y expande
-            const velocityIntensity = (scrollVelocity / 80) * 0.45;
+            // Al hacer scroll/movimiento, leve variación entre 20% y 30% de opacidad
+            const velocityIntensity = (scrollVelocity / 80) * 0.08;
             
-            // Con el scroll se va difuminando suavemente hacia el resto de la página
-            targetOpacity = Math.max(0.35, 0.9 - (scrollRatio * 0.4) + velocityIntensity);
-            targetScale = 1 + (scrollRatio * 0.45) + (velocityIntensity * 0.25);
-            targetAngle = (scrollRatio * 8) + (delta > 0 ? 2 : -2);
+            // Se mantiene siempre sutil y transparente (entre 0.18 y 0.30)
+            targetOpacity = Math.max(0.18, Math.min(0.30, 0.26 - (scrollRatio * 0.08) + velocityIntensity));
+            targetScale = 1 + (scrollRatio * 0.35) + (velocityIntensity * 0.15);
+            targetAngle = (scrollRatio * 6) + (delta > 0 ? 1.5 : -1.5);
         };
 
         window.addEventListener('scroll', handleScrollSun, { passive: true });

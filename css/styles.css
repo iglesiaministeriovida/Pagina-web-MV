@@ -79,8 +79,8 @@ body {
   z-index: 99; /* Por encima de fotos y secciones, transparente */
   overflow: hidden;
   mix-blend-mode: screen;
-  opacity: var(--sun-opacity, 0.85);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: var(--sun-opacity, 0.25); /* Transparencia suave al 20% - 30% */
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
@@ -281,7 +281,7 @@ button, input, textarea {
   transform: translateY(-2px);
 }
 
-/* ─── HEADER Y NAVBAR (ESTILO ORIVEX) ─── */
+/* ─── HEADER Y NAVBAR (ESTILO ORIVEX - OPACIDAD 80%) ─── */
 .orivex-header {
   position: fixed;
   top: 0;
@@ -306,7 +306,7 @@ button, input, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(15, 17, 23, 0.85);
+  background: rgba(15, 17, 23, 0.80); /* 80% de opacidad */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-subtle);
@@ -317,7 +317,7 @@ button, input, textarea {
 }
 
 .orivex-header.scrolled .orivex-navbar {
-  background: rgba(9, 10, 13, 0.96);
+  background: rgba(9, 10, 13, 0.80); /* 80% de opacidad al hacer scroll */
   border-color: var(--border-hover);
 }
 
