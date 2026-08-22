@@ -1,12 +1,12 @@
 /**
- * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL (ORIVEX WEBFLOW STYLE)
+ * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL (ORIVEX WEBFLOW STYLE - MULTI-PAGE)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Header scroll effect
     const header = document.querySelector('.orivex-header');
     const handleScroll = () => {
-        if (window.scrollY > 30) {
+        if (window.scrollY > 25) {
             header?.classList.add('scrolled');
         } else {
             header?.classList.remove('scrolled');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Smooth Scroll con Offset de Navegación
+    // 3. Smooth Scroll para enlaces internos con almohadilla (#)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                const offset = 80;
+                const offset = 90;
                 const elementPos = targetElement.getBoundingClientRect().top;
                 const offsetPos = elementPos + window.pageYOffset - offset;
 
@@ -73,28 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 obs.unobserve(entry.target);
             }
         });
-    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
 
     document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-    // 5. Resaltar enlace activo según la sección visible
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.orivex-nav-menu .nav-link-item');
-
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                });
-            }
-        });
-    }, { rootMargin: '-30% 0px -70% 0px' });
-
-    sections.forEach(section => navObserver.observe(section));
-
-    // 6. Formulario de Contacto
+    // 5. Formulario de Contacto
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

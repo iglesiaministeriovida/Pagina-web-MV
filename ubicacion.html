@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación &amp; Sedes | Ministerio Vida</title>
+    <meta name="description" content="Conoce las ubicaciones, horarios de culto y puntos de encuentro de Ministerio Vida en Santa Cruz de la Sierra (Campus Central y Campus Norte).">
+    <meta name="theme-color" content="#090A0D">
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23090A0D'/><path d='M50 18v64M28 38h44' stroke='%23F59E0B' stroke-width='9' stroke-linecap='round'/></svg>">
+</head>
+<body class="orivex-theme">
+
+    <!-- HEADER -->
+    <header class="orivex-header">
+        <div class="header-container">
+            <nav class="orivex-navbar">
+                <a href="index.html" class="orivex-logo" aria-label="Inicio Ministerio Vida">
+                    <div class="logo-symbol">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20M5 8h14"/></svg>
+                    </div>
+                    <span class="logo-title">MINISTERIO<strong>VIDA</strong></span>
+                </a>
+
+                <ul class="orivex-nav-menu">
+                    <li><a href="index.html" class="nav-link-item">Inicio</a></li>
+                    <li><a href="nosotros.html" class="nav-link-item">Nosotros</a></li>
+                    <li><a href="pilares.html" class="nav-link-item">Pilares</a></li>
+                    <li><a href="eventos.html" class="nav-link-item">Eventos</a></li>
+                    <li><a href="lecturas.html" class="nav-link-item">Lecturas</a></li>
+                    <li><a href="sermones.html" class="nav-link-item">Sermones</a></li>
+                    <li><a href="ubicacion.html" class="nav-link-item active">Ubicación</a></li>
+                </ul>
+
+                <div class="nav-cta-box">
+                    <a href="#contacto" class="orivex-btn-primary">
+                        <span>Planifica tu Visita</span>
+                        <div class="btn-arrow-track">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    
+                    <button class="orivex-burger" id="burgerToggle" aria-label="Abrir Menú">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <div class="orivex-mobile-drawer" id="mobileDrawer">
+            <a href="index.html" class="m-nav-link">Inicio</a>
+            <a href="nosotros.html" class="m-nav-link">Sobre Nosotros</a>
+            <a href="pilares.html" class="m-nav-link">Pilares de Vida</a>
+            <a href="eventos.html" class="m-nav-link">Próximos Eventos</a>
+            <a href="lecturas.html" class="m-nav-link">Planes de Lectura</a>
+            <a href="sermones.html" class="m-nav-link">Prédicas en Video</a>
+            <a href="ubicacion.html" class="m-nav-link active">Sedes &amp; Ubicación</a>
+            <a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="orivex-btn-primary m-btn-full">
+                <span>Escribir al Pastor</span>
+                <div class="btn-arrow-track">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE PÁGINA -->
+        <section class="page-hero-header">
+            <div class="orivex-container">
+                <div class="orivex-breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Ubicación &amp; Sedes</span>
+                </div>
+                <div class="page-hero-content animate-fade">
+                    <div class="section-label-tag">/ ENCUÉNTRANOS EN SANTA CRUZ /</div>
+                    <h1 class="page-lead-title">Nuestras Sedes &amp; Horarios</h1>
+                    <p class="page-lead-subtitle">
+                        Dos auditorios estratégicamente ubicados para darte la bienvenida este domingo junto a toda tu familia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETALLE DE SEDES -->
+        <section class="orivex-section">
+            <div class="orivex-container">
+                <div class="venues-orivex-grid">
+                    <!-- Sede 1 -->
+                    <div class="venue-orivex-box scroll-reveal">
+                        <div class="venue-pill">SEDE PRINCIPAL</div>
+                        <h3 class="venue-h3">Campus Central</h3>
+                        <div class="venue-info-line">
+                            <span class="v-ico">📍</span>
+                            <span>Av. Principal, Santa Cruz de la Sierra, Bolivia</span>
+                        </div>
+                        <div class="venue-info-line">
+                            <span class="v-ico">🕒</span>
+                            <span><strong>Domingos:</strong> 09:00 AM &amp; 11:00 AM</span>
+                        </div>
+                        <div class="venue-info-line">
+                            <span class="v-ico">👶</span>
+                            <span>Ministerio Infantil Vida Kids disponible</span>
+                        </div>
+                        <div class="map-embed-container">
+                            <iframe 
+                                title="Mapa Campus Central"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.308709320875!2d-63.1818!3d-17.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ3JzAwLjAiUyA2M8KwMTAnNTQuNSJX!5e0!3m2!1ses!2sbo!4v1600000000000!5m2!1ses!2sbo" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Sede 2 -->
+                    <div class="venue-orivex-box scroll-reveal">
+                        <div class="venue-pill">ZONA NORTE</div>
+                        <h3 class="venue-h3">Campus Norte</h3>
+                        <div class="venue-info-line">
+                            <span class="v-ico">📍</span>
+                            <span>Av. Beni &amp; 5to Anillo, Zona Norte, Santa Cruz</span>
+                        </div>
+                        <div class="venue-info-line">
+                            <span class="v-ico">🕒</span>
+                            <span><strong>Domingos:</strong> 10:00 AM</span>
+                        </div>
+                        <div class="venue-info-line">
+                            <span class="v-ico">👶</span>
+                            <span>Ministerio Infantil Vida Kids disponible</span>
+                        </div>
+                        <div class="map-embed-container">
+                            <iframe 
+                                title="Mapa Campus Norte"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.308709320875!2d-63.1718!3d-17.7633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ1JzQ4LjAiUyA2M8KwMTAnMTguNSJX!5e0!3m2!1ses!2sbo!4v1600000000000!5m2!1ses!2sbo" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO DE CONTACTO & PASTORAL -->
+        <section class="orivex-section section-bg-alt" id="contacto">
+            <div class="orivex-container">
+                <div class="orivex-contact-block scroll-reveal">
+                    <div class="contact-split-grid">
+                        <div class="contact-info-col">
+                            <div class="section-label-tag">/ CONÉCTATE /</div>
+                            <h2 class="contact-big-title">¿Necesitas oración o tienes alguna duda?</h2>
+                            <p class="contact-paragraph">
+                                Nuestro equipo pastoral está listo para acompañarte en oración, responder tus preguntas y ayudarte a planificar tu visita.
+                            </p>
+
+                            <div class="contact-direct-rows">
+                                <div class="direct-row-item">
+                                    <div class="direct-icon-box">📞</div>
+                                    <div>
+                                        <span class="direct-tag">Línea Directa</span>
+                                        <span class="direct-val">+591 (3) 000-0000</span>
+                                    </div>
+                                </div>
+
+                                <div class="direct-row-item">
+                                    <div class="direct-icon-box">✉️</div>
+                                    <div>
+                                        <span class="direct-tag">Correo Electrónico</span>
+                                        <span class="direct-val">contacto@ministeriovida.org</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="https://wa.me/591XXXXXXXXX?text=Hola%20Ministerio%20Vida%2C%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="orivex-btn-whatsapp">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                <span>Chatear por WhatsApp con el Pastor</span>
+                            </a>
+                        </div>
+
+                        <div class="contact-form-col">
+                            <form class="orivex-form" id="contactForm">
+                                <h3 class="form-h3">Envíanos un Mensaje</h3>
+
+                                <div class="form-group">
+                                    <label for="cName">Nombre Completo</label>
+                                    <input type="text" id="cName" name="name" class="orivex-input" placeholder="Ej: Daniel Menacho" required>
+                                </div>
+
+                                <div class="form-row-duo">
+                                    <div class="form-group">
+                                        <label for="cEmail">Correo Electrónico</label>
+                                        <input type="email" id="cEmail" name="email" class="orivex-input" placeholder="daniel@ejemplo.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cPhone">Teléfono / WhatsApp</label>
+                                        <input type="tel" id="cPhone" name="phone" class="orivex-input" placeholder="+591 70000000">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cMsg">Petición de Oración o Consulta</label>
+                                    <textarea id="cMsg" name="message" class="orivex-textarea" rows="4" placeholder="Escribe aquí tu petición o mensaje..." required></textarea>
+                                </div>
+
+                                <button type="submit" class="orivex-btn-primary btn-submit-full">
+                                    <span>Enviar Mensaje</span>
+                                    <div class="btn-arrow-track">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="orivex-footer">
+        <div class="orivex-container">
+            <div class="footer-top-row">
+                <div class="footer-brand-side">
+                    <div class="footer-logo">
+                        <div class="logo-symbol">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20M5 8h14"/></svg>
+                        </div>
+                        <span>MINISTERIO<strong>VIDA</strong></span>
+                    </div>
+                    <p class="footer-quote">
+                        Llevando esperanza, conectando personas y transformando vidas en el corazón de Santa Cruz, Bolivia.
+                    </p>
+                </div>
+
+                <div class="footer-nav-cols">
+                    <div class="f-col">
+                        <h4>Iglesia</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="pilares.html">Pilares</a></li>
+                            <li><a href="ubicacion.html">Ubicación</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="f-col">
+                        <h4>Recursos</h4>
+                        <ul>
+                            <li><a href="sermones.html">Sermones</a></li>
+                            <li><a href="lecturas.html">Devocionales</a></li>
+                            <li><a href="eventos.html">Eventos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="f-col">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><a href="ubicacion.html#contacto">Soy Nuevo</a></li>
+                            <li><a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-legal-bar">
+                <p>© 2024 Ministerio Vida. Santa Cruz de la Sierra, Bolivia.</p>
+                <div class="footer-legal-links">
+                    <a href="ubicacion.html">Ubicación</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

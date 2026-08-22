@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximos Eventos | Ministerio Vida</title>
+    <meta name="description" content="Calendario de actividades, noches de adoración, reuniones de jóvenes y eventos especiales en Ministerio Vida Santa Cruz.">
+    <meta name="theme-color" content="#090A0D">
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23090A0D'/><path d='M50 18v64M28 38h44' stroke='%23F59E0B' stroke-width='9' stroke-linecap='round'/></svg>">
+</head>
+<body class="orivex-theme">
+
+    <!-- HEADER -->
+    <header class="orivex-header">
+        <div class="header-container">
+            <nav class="orivex-navbar">
+                <a href="index.html" class="orivex-logo" aria-label="Inicio Ministerio Vida">
+                    <div class="logo-symbol">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20M5 8h14"/></svg>
+                    </div>
+                    <span class="logo-title">MINISTERIO<strong>VIDA</strong></span>
+                </a>
+
+                <ul class="orivex-nav-menu">
+                    <li><a href="index.html" class="nav-link-item">Inicio</a></li>
+                    <li><a href="nosotros.html" class="nav-link-item">Nosotros</a></li>
+                    <li><a href="pilares.html" class="nav-link-item">Pilares</a></li>
+                    <li><a href="eventos.html" class="nav-link-item active">Eventos</a></li>
+                    <li><a href="lecturas.html" class="nav-link-item">Lecturas</a></li>
+                    <li><a href="sermones.html" class="nav-link-item">Sermones</a></li>
+                    <li><a href="ubicacion.html" class="nav-link-item">Ubicación</a></li>
+                </ul>
+
+                <div class="nav-cta-box">
+                    <a href="ubicacion.html#contacto" class="orivex-btn-primary">
+                        <span>Planifica tu Visita</span>
+                        <div class="btn-arrow-track">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+                    
+                    <button class="orivex-burger" id="burgerToggle" aria-label="Abrir Menú">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <div class="orivex-mobile-drawer" id="mobileDrawer">
+            <a href="index.html" class="m-nav-link">Inicio</a>
+            <a href="nosotros.html" class="m-nav-link">Sobre Nosotros</a>
+            <a href="pilares.html" class="m-nav-link">Pilares de Vida</a>
+            <a href="eventos.html" class="m-nav-link active">Próximos Eventos</a>
+            <a href="lecturas.html" class="m-nav-link">Planes de Lectura</a>
+            <a href="sermones.html" class="m-nav-link">Prédicas en Video</a>
+            <a href="ubicacion.html" class="m-nav-link">Sedes &amp; Ubicación</a>
+            <a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="orivex-btn-primary m-btn-full">
+                <span>Escribir al Pastor</span>
+                <div class="btn-arrow-track">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE PÁGINA -->
+        <section class="page-hero-header">
+            <div class="orivex-container">
+                <div class="orivex-breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Eventos</span>
+                </div>
+                <div class="page-hero-content animate-fade">
+                    <div class="section-label-tag">/ CALENDARIO DE ACTIVIDADES /</div>
+                    <h1 class="page-lead-title">Próximos Encuentros &amp; Conferencias</h1>
+                    <p class="page-lead-subtitle">
+                        Agenda estas fechas y sé parte de momentos únicos de alabanza, edificación bíblica y fraternidad.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID DE EVENTOS -->
+        <section class="orivex-section">
+            <div class="orivex-container">
+                <div class="events-showcase-grid">
+                    <!-- Evento 1 -->
+                    <article class="showcase-card scroll-reveal">
+                        <div class="showcase-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=700&q=80&auto=format&fit=crop" alt="Noche de Adoración" loading="lazy">
+                            <div class="showcase-date-tag">
+                                <span class="d-day">15</span>
+                                <span class="d-month">AGO</span>
+                            </div>
+                        </div>
+                        <div class="showcase-card-body">
+                            <span class="showcase-category">ADORACIÓN</span>
+                            <h3 class="showcase-title">Noche de Adoración &amp; Alabanza</h3>
+                            <p class="showcase-snippet">Un tiempo especial dedicado a levantar nuestras voces en unidad y buscar la presencia de Dios.</p>
+                            <div class="showcase-meta">
+                                <span>📍 Campus Central · 19:30 hrs</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Evento 2 -->
+                    <article class="showcase-card scroll-reveal">
+                        <div class="showcase-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=700&q=80&auto=format&fit=crop" alt="Grupos de Vida" loading="lazy">
+                            <div class="showcase-date-tag">
+                                <span class="d-day">18</span>
+                                <span class="d-month">AGO</span>
+                            </div>
+                        </div>
+                        <div class="showcase-card-body">
+                            <span class="showcase-category">COMUNIDAD</span>
+                            <h3 class="showcase-title">Reunión de Grupos de Vida</h3>
+                            <p class="showcase-snippet">Encuentros en hogares distribuidos por toda la ciudad para compartir, orar y crecer juntos.</p>
+                            <div class="showcase-meta">
+                                <span>📍 Distintas Zonas · 20:00 hrs</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Evento 3 -->
+                    <article class="showcase-card scroll-reveal">
+                        <div class="showcase-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=700&q=80&auto=format&fit=crop" alt="Impacto Comunitario" loading="lazy">
+                            <div class="showcase-date-tag">
+                                <span class="d-day">22</span>
+                                <span class="d-month">AGO</span>
+                            </div>
+                        </div>
+                        <div class="showcase-card-body">
+                            <span class="showcase-category">SERVICIO</span>
+                            <h3 class="showcase-title">Jornada de Solidaridad Urbana</h3>
+                            <p class="showcase-snippet">Saldremos como equipo voluntario para entregar víveres y brindar apoyo a familias necesitadas.</p>
+                            <div class="showcase-meta">
+                                <span>📍 Punto de Encuentro · 08:30 hrs</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Evento 4 -->
+                    <article class="showcase-card scroll-reveal">
+                        <div class="showcase-thumb-wrap">
+                            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=700&q=80&auto=format&fit=crop" alt="Fundamentos de la Fe" loading="lazy">
+                            <div class="showcase-date-tag">
+                                <span class="d-day">25</span>
+                                <span class="d-month">AGO</span>
+                            </div>
+                        </div>
+                        <div class="showcase-card-body">
+                            <span class="showcase-category">DISCIPULADO</span>
+                            <h3 class="showcase-title">Curso: Fundamentos de la Fe</h3>
+                            <p class="showcase-snippet">Cuatro módulos esenciales para establecer raíces sólidas en tu relación con Jesús.</p>
+                            <div class="showcase-meta">
+                                <span>📍 Campus Norte · 18:00 hrs</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Banner Informativo -->
+                <div class="orivex-contact-block" style="margin-top: 56px; padding: 40px; text-align: center;">
+                    <h3 style="font-size: 26px; color: var(--t-white); margin-bottom: 12px;">¿Quieres registrarte a un evento o recibir recordatorios?</h3>
+                    <p style="font-size: 15px; color: var(--t-body); margin-bottom: 24px;">Escríbenos por WhatsApp y te enviaremos la ubicación exacta y detalles de cada actividad.</p>
+                    <a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="orivex-btn-whatsapp">
+                        <span>Consultar Eventos por WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="orivex-footer">
+        <div class="orivex-container">
+            <div class="footer-top-row">
+                <div class="footer-brand-side">
+                    <div class="footer-logo">
+                        <div class="logo-symbol">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20M5 8h14"/></svg>
+                        </div>
+                        <span>MINISTERIO<strong>VIDA</strong></span>
+                    </div>
+                    <p class="footer-quote">
+                        Llevando esperanza, conectando personas y transformando vidas en el corazón de Santa Cruz, Bolivia.
+                    </p>
+                </div>
+
+                <div class="footer-nav-cols">
+                    <div class="f-col">
+                        <h4>Iglesia</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="pilares.html">Pilares</a></li>
+                            <li><a href="ubicacion.html">Ubicación</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="f-col">
+                        <h4>Recursos</h4>
+                        <ul>
+                            <li><a href="sermones.html">Sermones</a></li>
+                            <li><a href="lecturas.html">Devocionales</a></li>
+                            <li><a href="eventos.html">Eventos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="f-col">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><a href="ubicacion.html#contacto">Soy Nuevo</a></li>
+                            <li><a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-legal-bar">
+                <p>© 2024 Ministerio Vida. Santa Cruz de la Sierra, Bolivia.</p>
+                <div class="footer-legal-links">
+                    <a href="ubicacion.html">Ubicación</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
