@@ -422,34 +422,11 @@ button, input, textarea {
   align-items: end;
 }
 
-.orivex-tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--c-gold-subtle);
-  border: 1px solid var(--border-gold);
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
-  font-size: 11.5px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  color: var(--c-gold);
-  margin-bottom: 24px;
-}
-
-.dot-pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--c-gold);
-  box-shadow: 0 0 8px var(--c-gold);
-}
-
 .hero-h1 {
   font-family: var(--font-display);
-  font-size: 60px;
+  font-size: 64px;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.08;
   letter-spacing: -1.5px;
   color: var(--t-white);
   margin-bottom: 28px;
@@ -653,7 +630,7 @@ button, input, textarea {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 56px;
+  margin-bottom: 48px;
 }
 
 .section-sub-copy {
@@ -930,7 +907,201 @@ button, input, textarea {
   transform: translateX(4px);
 }
 
-/* ─── SERMONES & VIDEOS ─── */
+/* ─── 🌟 REPRODUCTOR DESTACADO EN GRANDE 🌟 ─── */
+.featured-video-wrapper {
+  margin-bottom: 48px;
+}
+
+.featured-video-card {
+  background: var(--c-bg-card);
+  border: 1.5px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  transition: var(--trans);
+  cursor: pointer;
+}
+
+.featured-video-card:hover {
+  box-shadow: 0 25px 70px rgba(245, 158, 11, 0.25);
+}
+
+.featured-video-media {
+  position: relative;
+  aspect-ratio: 21/9;
+  min-height: 380px;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-video-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featured-video-card:hover .featured-video-img {
+  transform: scale(1.04);
+}
+
+.featured-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(19, 21, 29, 0.95) 0%, rgba(19, 21, 29, 0.3) 50%, rgba(19, 21, 29, 0.5) 100%);
+}
+
+.featured-play-pill {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(9, 10, 13, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--c-gold);
+  padding: 10px 24px 10px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: var(--trans);
+  z-index: 3;
+}
+
+.play-circle-gold {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--c-gold);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px;
+  transition: var(--trans);
+}
+
+.play-pill-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--t-white);
+}
+
+.featured-video-card:hover .featured-play-pill {
+  transform: scale(1.08);
+  background: var(--c-gold);
+}
+
+.featured-video-card:hover .play-circle-gold {
+  background: #000;
+  color: var(--c-gold);
+}
+
+.featured-video-card:hover .play-pill-text {
+  color: #000;
+}
+
+.featured-badge-live {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(9, 10, 13, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--t-white);
+  z-index: 3;
+}
+
+.live-dot-red {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #EF4444;
+  box-shadow: 0 0 8px #EF4444;
+  animation: orivexPulse 1.8s infinite;
+}
+
+.featured-video-info {
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: var(--c-bg-card);
+}
+
+.f-info-left {
+  max-width: 720px;
+}
+
+.f-category {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--c-gold);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.f-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--t-white);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.f-desc {
+  font-size: 14.5px;
+  color: var(--t-body);
+}
+
+.btn-yt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--t-white);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  transition: var(--trans);
+  flex-shrink: 0;
+}
+
+.btn-yt-link:hover {
+  background: #FF0000;
+  border-color: #FF0000;
+  color: #FFFFFF;
+}
+
+.sermon-sub-heading {
+  margin-bottom: 24px;
+}
+
+.sub-lead-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--t-muted);
+}
+
+/* Sermones Grid Inferior */
 .sermon-orivex-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -975,8 +1146,8 @@ button, input, textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: var(--c-gold);
   color: #000;

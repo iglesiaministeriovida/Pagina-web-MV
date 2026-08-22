@@ -1,10 +1,36 @@
 /**
  * js/videos.js
- * Modal interactivo para videos de YouTube (Orivex Style)
+ * Reproducción de video destacada inline y modal interactivo para Ministerio Vida
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inyectar estilos para el modal de video si no existen
+    // 1. Manejo del Reproductor Destacado Grande (Reproducción Directa dentro de la página)
+    const featuredCard = document.getElementById('mainFeaturedPlayer');
+    if (featuredCard) {
+        featuredCard.addEventListener('click', function(e) {
+            // Si hicieron clic en el enlace externo a YouTube, dejamos que abra la pestaña
+            if (e.target.closest('.btn-yt-link')) return;
+
+            const videoId = this.getAttribute('data-youtube-id') || 'HFzE9sv9Hzo';
+            const mediaContainer = this.querySelector('.featured-video-media');
+            
+            if (mediaContainer && !mediaContainer.querySelector('iframe')) {
+                mediaContainer.innerHTML = `
+                    <iframe 
+                        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+                        title="Predicación Ministerio Vida"
+                        style="width: 100%; height: 100%; position: absolute; inset: 0; border: none;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                `;
+                // Remover cursor pointer en el contenedor una vez reproduciendo
+                featuredCard.style.cursor = 'default';
+            }
+        });
+    }
+
+    // 2. Modal Interactivo para los clips inferiores
     const styleId = 'video-modal-styles';
     if (!document.getElementById(styleId)) {
         const styles = `
@@ -64,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.head.appendChild(styleSheet);
     }
 
-    // 2. Crear estructura DOM del modal
     const modal = document.createElement('div');
     modal.className = 'video-modal';
     modal.innerHTML = `
@@ -77,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeModal = () => {
         modal.classList.remove('active');
-        document.getElementById('video-modal-iframe-container').innerHTML = ''; // Detener video
+        document.getElementById('video-modal-iframe-container').innerHTML = '';
         document.body.style.overflow = '';
     };
 
@@ -86,15 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) closeModal();
     });
 
-    // 3. Configurar selectores de tarjetas de video
-    const videoCards = document.querySelectorAll('.sermon-orivex-card, .sermon-box, .sermon-card, .video-card');
-
-    videoCards.forEach(card => {
-        const videoId = card.getAttribute('data-youtube-id');
-        if (!videoId) return;
-
+    // Configurar selectores de tarjetas de sermones inferiores
+    const sermonCards = document.querySelectorAll('.sermon-orivex-card');
+    sermonCards.forEach(card => {
         card.addEventListener('click', (e) => {
             e.preventDefault();
+            const videoId = card.getAttribute('data-youtube-id');
+            if (!videoId) return;
+
             const iframeHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
             document.getElementById('video-modal-iframe-container').innerHTML = iframeHTML;
             modal.classList.add('active');
