@@ -1,19 +1,18 @@
 /**
  * js/videos.js
- * Carga lazy de videos de YouTube y modal interactivo para Ministerio Vida.
+ * Carga lazy y Modal Interactivo para videos de YouTube (Ministerio Vida)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1 & 2. YOUTUBE LAZY LOAD & MODAL
-    
-    // Inyectar estilos para el modal si no existen en CSS
+    // 1. Inyectar estilos para el modal de video si no existen
     const styleId = 'video-modal-styles';
     if (!document.getElementById(styleId)) {
         const styles = `
             .video-modal {
                 position: fixed;
                 inset: 0;
-                background: rgba(0, 0, 0, 0.95);
+                background: rgba(0, 0, 0, 0.94);
+                backdrop-filter: blur(16px);
                 z-index: 10000;
                 display: flex;
                 align-items: center;
@@ -27,13 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 visibility: visible;
             }
             .video-modal-content {
-                width: 90%;
-                max-width: 900px;
+                width: 92%;
+                max-width: 960px;
                 aspect-ratio: 16 / 9;
                 position: relative;
                 background: #000;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                border: 1px solid var(--border, #2D2D2D);
+                border-radius: 12px;
+                overflow: hidden;
+                border: 1px solid rgba(245, 158, 11, 0.3);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             }
             .video-modal-content iframe {
                 width: 100%;
@@ -42,19 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             .video-modal-close {
                 position: absolute;
-                top: -40px;
+                top: -46px;
                 right: 0;
-                color: white;
-                font-size: 32px;
+                color: #fff;
+                font-size: 34px;
                 cursor: pointer;
                 background: none;
                 border: none;
                 padding: 0;
                 line-height: 1;
-                transition: color 0.3s ease;
+                transition: color 0.2s ease;
             }
             .video-modal-close:hover {
-                color: var(--accent, #D4A017);
+                color: #F59E0B;
             }
         `;
         const styleSheet = document.createElement('style');
@@ -63,13 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.head.appendChild(styleSheet);
     }
 
-    // Crear la estructura del modal
+    // 2. Crear estructura DOM del modal
     const modal = document.createElement('div');
     modal.className = 'video-modal';
     modal.innerHTML = `
         <div class="video-modal-content">
-            <button class="video-modal-close">&times;</button>
-            <div id="video-modal-iframe-container"></div>
+            <button class="video-modal-close" aria-label="Cerrar reproductor">&times;</button>
+            <div id="video-modal-iframe-container" style="width:100%; height:100%;"></div>
         </div>
     `;
     document.body.appendChild(modal);
@@ -85,43 +86,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) closeModal();
     });
 
-    // Configurar cada video card
-    const videoCards = document.querySelectorAll('.video-card');
+    // 3. Configurar selectores de tarjetas de video
+    const videoCards = document.querySelectorAll('.sermon-card, .video-card-clean, .video-card');
 
     videoCards.forEach(card => {
         const videoId = card.getAttribute('data-youtube-id');
         if (!videoId) return;
 
-        const thumbnailContainer = card.querySelector('.video-thumbnail');
-        if (thumbnailContainer) {
-            // Cargar imagen thumbnail
-            const img = new Image();
-            img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-            img.alt = "Video Thumbnail";
-            img.style.width = "100%";
-            img.style.height = "100%";
-            img.style.objectFit = "cover";
-            
-            // Fallback
-            img.onerror = function() {
-                this.onerror = null;
-                this.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-            };
-
-            // Asegurarnos de limpiar e insertar la imagen detras del boton
-            const playBtn = thumbnailContainer.querySelector('.video-play-btn');
-            thumbnailContainer.innerHTML = ''; // limpiar
-            thumbnailContainer.appendChild(img);
-            if (playBtn) thumbnailContainer.appendChild(playBtn);
-
-            // Al click, abrir el modal
-            card.addEventListener('click', (e) => {
-                e.preventDefault();
-                const iframeHTML = \`<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\`;
-                document.getElementById('video-modal-iframe-container').innerHTML = iframeHTML;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const iframeHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            document.getElementById('video-modal-iframe-container').innerHTML = iframeHTML;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
     });
 });

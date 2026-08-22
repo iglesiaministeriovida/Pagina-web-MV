@@ -1,15 +1,12 @@
 /* ==========================================================================
-   MINISTERIO VIDA — ANIMACIONES Y MICRO-INTERACCIONES PROFESIONALES
-   Curvas de aceleración cinematográficas (Cubic-Bezier) y transiciones fluidas
+   MINISTERIO VIDA — ANIMACIONES FLUIDAS & CINEMATOGRÁFICAS
    ========================================================================== */
 
-/* ─── KEYFRAMES ─── */
-
-/* Revelación suave desde abajo */
-@keyframes revealUp {
+/* ─── FADE IN & REVEAL KEYFRAMES ─── */
+@keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(32px);
+    transform: translateY(28px);
   }
   100% {
     opacity: 1;
@@ -17,136 +14,65 @@
   }
 }
 
-/* Revelación con ligero desenfoque */
-@keyframes blurReveal {
-  0% {
-    opacity: 0;
-    filter: blur(8px);
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
-}
-
-/* Pulso sutil para puntos dorados activos */
-@keyframes pulseGlow {
+@keyframes pulseLive {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(229, 169, 60, 0.7);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
   }
   70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 8px rgba(229, 169, 60, 0);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 7px rgba(245, 158, 11, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(229, 169, 60, 0);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
   }
 }
 
-/* Animación sutil de zoom en el fondo Hero */
-@keyframes subtleZoom {
-  0% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-/* Desplazamiento del scroll mouse */
-@keyframes scrollWheel {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 0.2;
-    transform: translateY(8px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-}
-
-/* ─── CLASES DE ANIMACIÓN INICIAL (HERO) ─── */
-.animate-reveal {
+/* ─── CLASES DE ANIMACIÓN ─── */
+.reveal-fade {
   opacity: 0;
-  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: var(--delay, 0ms);
+  animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* ─── CLASES DE ANIMACIÓN POR SCROLL (INTERSECTION OBSERVER) ─── */
-.animate-on-scroll {
+.hero-tag-pill.reveal-fade { animation-delay: 0.1s; }
+.hero-main-title.reveal-fade { animation-delay: 0.2s; }
+.hero-lead-text.reveal-fade { animation-delay: 0.3s; }
+.hero-buttons-row.reveal-fade { animation-delay: 0.4s; }
+.hero-schedule-bar.reveal-fade { animation-delay: 0.5s; }
+
+.live-pulse-dot {
+  animation: pulseLive 2s infinite;
+}
+
+/* ─── SCROLL REVEAL (INTERSECTION OBSERVER) ─── */
+.scroll-reveal {
   opacity: 0;
-  transform: translateY(36px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.animate-on-scroll.is-visible {
+.scroll-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Delays escalonados para elementos dentro del mismo contenedor */
-.pillars-bento .bento-card:nth-child(1) { transition-delay: 50ms; }
-.pillars-bento .bento-card:nth-child(2) { transition-delay: 150ms; }
-.pillars-bento .bento-card:nth-child(3) { transition-delay: 250ms; }
+/* Retardos escalonados */
+.pillars-grid .pillar-box:nth-child(1) { transition-delay: 0.05s; }
+.pillars-grid .pillar-box:nth-child(2) { transition-delay: 0.15s; }
+.pillars-grid .pillar-box:nth-child(3) { transition-delay: 0.25s; }
 
-.events-grid .event-card-modern:nth-child(1) { transition-delay: 50ms; }
-.events-grid .event-card-modern:nth-child(2) { transition-delay: 150ms; }
-.events-grid .event-card-modern:nth-child(3) { transition-delay: 250ms; }
-.events-grid .event-card-modern:nth-child(4) { transition-delay: 350ms; }
+.events-cards-wrap .event-tile:nth-child(1) { transition-delay: 0.05s; }
+.events-cards-wrap .event-tile:nth-child(2) { transition-delay: 0.15s; }
+.events-cards-wrap .event-tile:nth-child(3) { transition-delay: 0.25s; }
+.events-cards-wrap .event-tile:nth-child(4) { transition-delay: 0.35s; }
 
-.reading-grid .reading-card:nth-child(1) { transition-delay: 50ms; }
-.reading-grid .reading-card:nth-child(2) { transition-delay: 150ms; }
-.reading-grid .reading-card:nth-child(3) { transition-delay: 250ms; }
+.reading-deck .reading-card-modern:nth-child(1) { transition-delay: 0.05s; }
+.reading-deck .reading-card-modern:nth-child(2) { transition-delay: 0.15s; }
+.reading-deck .reading-card-modern:nth-child(3) { transition-delay: 0.25s; }
 
-.videos-grid .video-card-clean:nth-child(1) { transition-delay: 50ms; }
-.videos-grid .video-card-clean:nth-child(2) { transition-delay: 150ms; }
-.videos-grid .video-card-clean:nth-child(3) { transition-delay: 250ms; }
-
-/* ─── EFECTOS HOVER DINÁMICOS ─── */
-.bento-card,
-.event-card-modern,
-.reading-card,
-.video-card-clean,
-.location-box {
-  will-change: transform, border-color, box-shadow;
-}
-
-/* Efecto brillo en botones dorados */
-.btn-gold-glow,
-.btn-gold-solid {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-gold-glow::after,
-.btn-gold-solid::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent,
-    rgba(255, 255, 255, 0.25),
-    transparent
-  );
-  transform: rotate(30deg) translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.btn-gold-glow:hover::after,
-.btn-gold-solid:hover::after {
-  transform: rotate(30deg) translateX(100%);
-}
+.sermons-grid .sermon-card:nth-child(1) { transition-delay: 0.05s; }
+.sermons-grid .sermon-card:nth-child(2) { transition-delay: 0.15s; }
+.sermons-grid .sermon-card:nth-child(3) { transition-delay: 0.25s; }

@@ -1,59 +1,55 @@
 /**
  * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL
- * Animaciones de scroll, navegación flotante y micro-interacciones
+ * Navegación, Drawer Móvil, IntersectionObserver y Formulario
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. NAVBAR SCROLL EFFECT (Transición de transparencia a fondo oscuro glass)
-    const headerNav = document.querySelector('.header-nav');
+    // 1. NAVBAR SCROLL EFFECT
+    const siteHeader = document.querySelector('.site-header');
     
     const handleScroll = () => {
-        if (window.scrollY > 40) {
-            headerNav?.classList.add('scrolled');
+        if (window.scrollY > 30) {
+            siteHeader?.classList.add('scrolled');
         } else {
-            headerNav?.classList.remove('scrolled');
+            siteHeader?.classList.remove('scrolled');
         }
     };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    // 2. MENÚ MÓVIL INTERACTIVO
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+    // 2. MENÚ MÓVIL (DRAWER)
+    const navToggle = document.getElementById('navToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
 
-    if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', (e) => {
+    if (navToggle && mobileDrawer) {
+        navToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isOpen = hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+            const isOpen = navToggle.classList.toggle('active');
+            mobileDrawer.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        // Cerrar menú móvil al hacer clic en cualquier enlace
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
+        // Cerrar al hacer clic en un enlace del drawer
+        mobileDrawer.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
+                navToggle.classList.remove('active');
+                mobileDrawer.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
-        // Cerrar menú al hacer clic fuera
+        // Cerrar al hacer clic fuera
         document.addEventListener('click', (e) => {
-            if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
+            if (mobileDrawer.classList.contains('active') && !mobileDrawer.contains(e.target) && !navToggle.contains(e.target)) {
+                navToggle.classList.remove('active');
+                mobileDrawer.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
             }
         });
     }
 
-    // 3. SCROLL SUAVE Y OFFSET PRECISO PARA ENLACES ANCLA
+    // 3. SCROLL SUAVE CON OFFSET DE NAVBAR
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -62,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                const headerOffset = 90;
+                const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -77,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. ANIMACIONES AL HACER SCROLL (INTERSECTION OBSERVER)
     const scrollObserverOptions = {
         root: null,
-        rootMargin: '0px 0px -80px 0px',
+        rootMargin: '0px 0px -60px 0px',
         threshold: 0.1
     };
 
@@ -85,18 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Dejar de observar una vez animado para mejor rendimiento
                 observer.unobserve(entry.target);
             }
         });
     }, scrollObserverOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animatedElements = document.querySelectorAll('.scroll-reveal');
     animatedElements.forEach(el => scrollObserver.observe(el));
 
-    // 5. RESALTAR ENLACE ACTIVO SEGÚN LA SECCIÓN EN PANTALLA
+    // 5. RESALTAR ENLACE ACTIVO SEGÚN LA SECCIÓN
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+    const navLinks = document.querySelectorAll('.nav-menu .menu-link');
 
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -107,11 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    }, { rootMargin: '-40% 0px -60% 0px' });
+    }, { rootMargin: '-30% 0px -70% 0px' });
 
     sections.forEach(section => navObserver.observe(section));
 
-    // 6. FORMULARIO DE CONTACTO INTERACTIVO
+    // 6. FORMULARIO DE CONTACTO / PETICIONES DE ORACIÓN
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -120,11 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = submitBtn.innerHTML;
             
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Enviando...</span>`;
+            submitBtn.innerHTML = `<span>Enviando mensaje...</span>`;
 
             setTimeout(() => {
                 submitBtn.innerHTML = `<span>¡Mensaje Enviado con Éxito! ✓</span>`;
-                submitBtn.style.background = '#25D366';
+                submitBtn.style.background = '#22c55e';
                 submitBtn.style.color = '#fff';
                 contactForm.reset();
 
@@ -134,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.style.background = '';
                     submitBtn.style.color = '';
                 }, 4000);
-            }, 800);
+            }, 700);
         });
     }
 });
