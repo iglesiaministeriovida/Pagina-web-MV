@@ -3,6 +3,51 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. LUZ INTERACTIVA DINÁMICA DE FONDO (Spotlight / Aura de Luz con física fluida LERP)
+    const glow = document.getElementById('interactiveGlow');
+    if (glow) {
+        let targetX = window.innerWidth / 2;
+        let targetY = window.innerHeight / 2.5;
+        let currentX = targetX;
+        let currentY = targetY;
+
+        // Capturar movimiento del ratón / puntero
+        const updatePointer = (clientX, clientY) => {
+            targetX = clientX;
+            targetY = clientY;
+        };
+
+        window.addEventListener('pointermove', (e) => {
+            updatePointer(e.clientX, e.clientY);
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        // Al hacer scroll, la luz reacciona suavemente con el desplazamiento
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const deltaY = window.scrollY - lastScrollY;
+            targetY = Math.max(50, Math.min(window.innerHeight - 50, targetY - deltaY * 0.25));
+            lastScrollY = window.scrollY;
+        }, { passive: true });
+
+        // Loop de renderizado continuo a 60fps con inercia elegante
+        const animateGlow = () => {
+            currentX += (targetX - currentX) * 0.085;
+            currentY += (targetY - currentY) * 0.085;
+
+            glow.style.setProperty('--mouse-x', `${currentX.toFixed(1)}px`);
+            glow.style.setProperty('--mouse-y', `${currentY.toFixed(1)}px`);
+
+            requestAnimationFrame(animateGlow);
+        };
+        animateGlow();
+    }
+
     // 1. Header scroll effect
     const header = document.querySelector('.orivex-header');
     const handleScroll = () => {

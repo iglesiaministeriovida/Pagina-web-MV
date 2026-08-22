@@ -66,6 +66,32 @@ body {
   background-color: var(--c-bg);
   color: var(--t-body);
   overflow-x: hidden;
+  position: relative;
+}
+
+/* ─── LUZ INTERACTIVA DINÁMICA DE FONDO (ORIVEX SPOTLIGHT) ─── */
+.interactive-glow-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(245, 158, 11, 0.14) 0%,
+    rgba(245, 158, 11, 0.05) 35%,
+    rgba(245, 158, 11, 0.015) 55%,
+    transparent 75%
+  );
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+  will-change: background;
+}
+
+main, section, footer {
+  position: relative;
+  z-index: 2;
 }
 
 .orivex-container {
