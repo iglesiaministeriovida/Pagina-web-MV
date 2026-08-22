@@ -1,55 +1,50 @@
 /**
- * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL
- * Navegación, Drawer Móvil, IntersectionObserver y Formulario
+ * MINISTERIO VIDA — JAVASCRIPT PRINCIPAL (WARM EDITORIAL)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. NAVBAR SCROLL EFFECT
-    const siteHeader = document.querySelector('.site-header');
-    
+    // 1. Header scroll effect
+    const header = document.querySelector('.editorial-header');
     const handleScroll = () => {
         if (window.scrollY > 30) {
-            siteHeader?.classList.add('scrolled');
+            header?.classList.add('scrolled');
         } else {
-            siteHeader?.classList.remove('scrolled');
+            header?.classList.remove('scrolled');
         }
     };
-    
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    // 2. MENÚ MÓVIL (DRAWER)
-    const navToggle = document.getElementById('navToggle');
-    const mobileDrawer = document.getElementById('mobileDrawer');
+    // 2. Menú Móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
 
-    if (navToggle && mobileDrawer) {
-        navToggle.addEventListener('click', (e) => {
+    if (menuToggle && mobilePanel) {
+        menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isOpen = navToggle.classList.toggle('active');
-            mobileDrawer.classList.toggle('active');
-            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            const isOpen = menuToggle.classList.toggle('active');
+            mobilePanel.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        // Cerrar al hacer clic en un enlace del drawer
-        mobileDrawer.querySelectorAll('a').forEach(link => {
+        mobilePanel.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                mobileDrawer.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.classList.remove('active');
+                mobilePanel.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
-        // Cerrar al hacer clic fuera
         document.addEventListener('click', (e) => {
-            if (mobileDrawer.classList.contains('active') && !mobileDrawer.contains(e.target) && !navToggle.contains(e.target)) {
-                navToggle.classList.remove('active');
-                mobileDrawer.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
+            if (mobilePanel.classList.contains('active') && !mobilePanel.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobilePanel.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
     }
 
-    // 3. SCROLL SUAVE CON OFFSET DE NAVBAR
+    // 3. Smooth Scroll con Offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -58,40 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offset = 80;
+                const elementPos = targetElement.getBoundingClientRect().top;
+                const offsetPos = elementPos + window.pageYOffset - offset;
 
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: offsetPos,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // 4. ANIMACIONES AL HACER SCROLL (INTERSECTION OBSERVER)
-    const scrollObserverOptions = {
-        root: null,
-        rootMargin: '0px 0px -60px 0px',
-        threshold: 0.1
-    };
-
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
+    // 4. Scroll Reveal
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
-    }, scrollObserverOptions);
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
 
-    const animatedElements = document.querySelectorAll('.scroll-reveal');
-    animatedElements.forEach(el => scrollObserver.observe(el));
+    document.querySelectorAll('.scroll-item').forEach(el => observer.observe(el));
 
-    // 5. RESALTAR ENLACE ACTIVO SEGÚN LA SECCIÓN
+    // 5. Active Link Highlight
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-menu .menu-link');
+    const navLinks = document.querySelectorAll('.nav-pill-menu .nav-item');
 
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -106,28 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => navObserver.observe(section));
 
-    // 6. FORMULARIO DE CONTACTO / PETICIONES DE ORACIÓN
+    // 6. Formulario Feedback
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalHTML = btn.innerHTML;
             
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Enviando mensaje...</span>`;
+            btn.disabled = true;
+            btn.innerHTML = `<span>Enviando mensaje...</span>`;
 
             setTimeout(() => {
-                submitBtn.innerHTML = `<span>¡Mensaje Enviado con Éxito! ✓</span>`;
-                submitBtn.style.background = '#22c55e';
-                submitBtn.style.color = '#fff';
+                btn.innerHTML = `<span>¡Mensaje Enviado! ✓</span>`;
+                btn.style.background = '#10B981';
+                btn.style.color = '#FFFFFF';
                 contactForm.reset();
 
                 setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.style.color = '';
+                    btn.disabled = false;
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.style.color = '';
                 }, 4000);
             }, 700);
         });

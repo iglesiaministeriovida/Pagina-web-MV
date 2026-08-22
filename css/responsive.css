@@ -1,185 +1,154 @@
 /* ==========================================================================
-   MINISTERIO VIDA — RESPONSIVE MEDIA QUERIES
+   MINISTERIO VIDA — RESPONSIVE DESIGN (WARM EDITORIAL)
    ========================================================================== */
 
-/* ─── TABLETS HORIZONTAL / PANTALLAS MEDIANAS (max-width: 1024px) ─── */
+/* ─── TABLETS HORIZONTAL (max-width: 1024px) ─── */
 @media (max-width: 1024px) {
-  .hero-main-title {
-    font-size: 52px;
-  }
-
-  .pillars-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pillars-grid .pillar-box:last-child {
-    grid-column: span 2;
-  }
-
-  .events-cards-wrap {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sermons-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .venues-split-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-split {
+  .hero-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
+  .hero-display-title {
+    font-size: 48px;
+  }
+
+  .editorial-cards-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .events-magazine-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sermon-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-editorial-frame {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 36px;
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
 
 /* ─── TABLETS VERTICAL & MÓVILES (max-width: 768px) ─── */
 @media (max-width: 768px) {
-  .section-container {
+  .wrap, .nav-shell {
     padding: 0 20px;
   }
 
-  .nav-bar {
-    padding: 14px 20px;
-  }
-
-  .nav-menu,
-  .nav-right .btn-action {
+  .nav-pill-menu,
+  .nav-cta-wrap .btn-editorial-gold {
     display: none;
   }
 
-  .nav-toggle {
+  .mobile-menu-btn {
     display: flex;
   }
 
-  .content-section {
-    padding: 70px 0;
+  .editorial-hero {
+    padding: 110px 0 60px 0;
   }
 
-  .hero-section {
-    padding-top: 110px;
-    padding-bottom: 50px;
+  .hero-wrapper {
+    padding: 0 20px;
   }
 
-  .hero-main-title {
-    font-size: 40px;
+  .hero-display-title {
+    font-size: 38px;
+    letter-spacing: -0.5px;
   }
 
-  .hero-lead-text {
+  .hero-p {
     font-size: 16px;
   }
 
-  .hero-schedule-bar {
-    flex-direction: column;
-    gap: 8px;
-    border-radius: var(--radius-lg);
-    width: 100%;
-    padding: 16px;
+  .page-section {
+    padding: 70px 0;
   }
 
-  .schedule-divider {
-    display: none;
-  }
-
-  .schedule-item {
-    text-align: center;
-  }
-
-  .section-headline {
-    font-size: 32px;
-  }
-
-  .section-header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .pillars-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pillars-grid .pillar-box:last-child {
-    grid-column: span 1;
-  }
-
-  .events-cards-wrap {
-    grid-template-columns: 1fr;
-  }
-
-  .reading-deck {
-    grid-template-columns: 1fr;
-  }
-
-  .sermons-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-main-card {
-    padding: 28px 20px;
-  }
-
-  .contact-title {
+  .main-title {
     font-size: 30px;
   }
 
-  .field-row {
+  .section-row-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .events-magazine-grid {
     grid-template-columns: 1fr;
   }
 
-  .footer-grid {
+  .reading-editorial-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 
-  .footer-legal-bar {
+  .sermon-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campuses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-editorial-frame {
+    padding: 24px;
+  }
+
+  .f-links-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-sub-bar {
     flex-direction: column;
     gap: 12px;
     text-align: center;
   }
 
-  .footer-legal-links {
+  .footer-sub-links {
     justify-content: center;
   }
 }
 
 /* ─── SMARTPHONES PEQUEÑOS (max-width: 480px) ─── */
 @media (max-width: 480px) {
-  .hero-main-title {
-    font-size: 34px;
-    letter-spacing: -0.5px;
+  .hero-display-title {
+    font-size: 32px;
   }
 
-  .hero-buttons-row {
+  .hero-btn-group {
     flex-direction: column;
     width: 100%;
   }
 
-  .btn-gold-main,
-  .btn-translucent {
+  .btn-hero-primary,
+  .btn-hero-secondary {
     width: 100%;
     justify-content: center;
   }
 
-  .section-headline {
+  .main-title {
     font-size: 26px;
   }
 
-  .pillar-box {
-    padding: 26px 20px;
+  .clean-pillar-card {
+    padding: 24px;
   }
 
-  .venue-card {
-    padding: 20px;
-  }
-
-  .venue-map-wrapper {
-    min-height: 260px;
+  .campus-card {
+    padding: 24px;
   }
 }
