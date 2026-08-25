@@ -1,35 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* ==========================================================================
-   MINISTERIO VIDA — SISTEMA DE DISEÑO INSPIRADO EN ORIVEX (WEBFLOW TEMPLATE)
-   Estética: Dark Luxury Agency / Modern Tech | Paleta: Carbón, Obsidiana y Oro Ámbar
+   MINISTERIO VIDA — SISTEMA DE DISEÑO ULTRA-LUXURY & EDITORIAL ELEGANTE
+   Estética: Obsidian Velvet, Champagne Gold & Liquid Glassmorphism
    ========================================================================== */
 
 :root {
-  /* ─── Paleta Orivex Dark ─── */
-  --c-bg: #090A0D;
-  --c-bg-alt: #101217;
-  --c-bg-card: #13151D;
-  --c-bg-card-hover: #191C26;
+  /* ─── Paleta Obsidian Velvet & Deep Noir ─── */
+  --c-bg: #07080B;
+  --c-bg-alt: #0D0F15;
+  --c-bg-card: rgba(18, 21, 30, 0.65);
+  --c-bg-card-hover: rgba(24, 28, 40, 0.85);
   --c-bg-pill: rgba(255, 255, 255, 0.05);
 
-  /* ─── Acentos Orivex ─── */
-  --c-gold: #F59E0B;
-  --c-gold-hover: #FBBF24;
-  --c-gold-glow: rgba(245, 158, 11, 0.35);
-  --c-gold-subtle: rgba(245, 158, 11, 0.12);
+  /* ─── Acentos Champagne Gold & Oro Puro ─── */
+  --c-gold: #E5C378;
+  --c-gold-light: #F7E8C0;
+  --c-gold-hover: #F0D598;
+  --c-gold-glow: rgba(229, 195, 120, 0.35);
+  --c-gold-subtle: rgba(229, 195, 120, 0.12);
 
   /* ─── Tipografía y Contraste ─── */
   --t-white: #FFFFFF;
-  --t-heading: #F8FAFC;
+  --t-heading: #FDFEFE;
   --t-body: #CBD5E1;
   --t-muted: #94A3B8;
   --t-dim: #64748B;
 
-  /* ─── Bordes y Líneas ─── */
-  --border-subtle: rgba(255, 255, 255, 0.09);
-  --border-hover: rgba(255, 255, 255, 0.22);
-  --border-gold: rgba(245, 158, 11, 0.4);
+  /* ─── Bordes y Líneas Hairline ─── */
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(229, 195, 120, 0.45);
+  --border-gold: rgba(229, 195, 120, 0.30);
+  --border-glass: rgba(255, 255, 255, 0.16);
 
-  /* ─── Tipografía ─── */
+  /* ─── Tipografías Nobles ─── */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Plus Jakarta Sans', var(--font-main);
 
@@ -41,8 +46,8 @@
   --radius-md: 10px;
   --radius-sm: 6px;
 
-  /* ─── Transición Suave Orivex ─── */
-  --trans: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  /* ─── Transición Suave y Sedosa ─── */
+  --trans: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ─── RESET Y BASES ─── */
@@ -58,7 +63,7 @@ html {
   color: var(--t-body);
   font-family: var(--font-main);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -67,6 +72,10 @@ body {
   color: var(--t-body);
   overflow-x: hidden;
   position: relative;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(229, 195, 120, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(229, 195, 120, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 15% 70%, rgba(229, 195, 120, 0.03) 0%, transparent 40%);
 }
 
 main, section, footer {
@@ -97,60 +106,90 @@ button, input, textarea {
   font-family: inherit;
 }
 
-/* ─── UTILIDADES DE TEXTO ─── */
+/* ─── UTILIDADES DE TEXTO Y ELEGANCIA EDITORIAL ─── */
 .text-accent-gold {
-  color: var(--c-gold);
+  background: linear-gradient(135deg, #FFF6E5 0%, #E5C378 50%, #C29B38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .section-label-tag {
-  display: inline-block;
-  font-size: 11.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--c-gold);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  background: rgba(229, 195, 120, 0.08);
+  border: 1px solid rgba(229, 195, 120, 0.25);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(10px);
 }
 
 .section-main-heading {
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -1px;
-  color: var(--t-white);
+  letter-spacing: -1.2px;
+  color: var(--t-heading);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .mb-large {
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
-/* ─── BOTONES CON DISEÑO GLASS / VIDRIO ESMERILADO (TEXTO ULTRA LEGIBLE) ─── */
+/* ─── BOTONES CON DISEÑO GLASS DE ALTA COSTURA (ORO CHAMPAGNE & CRISTAL) ─── */
 .orivex-btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(229, 195, 120, 0.18) 0%, rgba(229, 195, 120, 0.05) 100%);
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
-  padding: 10px 22px;
+  letter-spacing: 0.5px;
+  padding: 11px 24px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 8px 24px rgba(0, 0, 0, 0.45);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(229, 195, 120, 0.38);
+  backdrop-filter: blur(18px) saturate(200%);
+  -webkit-backdrop-filter: blur(18px) saturate(200%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(229, 195, 120, 0.10);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   transition: var(--trans);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.orivex-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+}
+
+.orivex-btn-primary:hover::before {
+  left: 140%;
 }
 
 .btn-arrow-track {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(229, 195, 120, 0.2);
+  border: 1px solid rgba(229, 195, 120, 0.4);
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -159,21 +198,21 @@ button, input, textarea {
 }
 
 .orivex-btn-primary:hover {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.40) 0%, rgba(245, 158, 11, 0.16) 100%);
-  border-color: rgba(245, 158, 11, 0.75);
+  background: linear-gradient(135deg, rgba(229, 195, 120, 0.45) 0%, rgba(229, 195, 120, 0.18) 100%);
+  border-color: rgba(229, 195, 120, 0.85);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 12px 30px rgba(245, 158, 11, 0.35);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 14px 35px rgba(229, 195, 120, 0.35);
 }
 
 .orivex-btn-primary:hover .btn-arrow-track {
-  background: rgba(245, 158, 11, 0.5);
-  border-color: var(--c-gold);
+  background: rgba(229, 195, 120, 0.6);
+  border-color: var(--c-gold-light);
   transform: translateX(3px);
 }
 
 .btn-lg {
-  padding: 14px 28px;
+  padding: 15px 30px;
   font-size: 15px;
 }
 
@@ -196,7 +235,7 @@ button, input, textarea {
 }
 
 .orivex-btn-secondary:hover {
-  background: linear-gradient(135deg, rgba(37, 211, 102, 0.4) 0%, rgba(37, 211, 102, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.35) 0%, rgba(37, 211, 102, 0.12) 100%);
   border-color: rgba(37, 211, 102, 0.7);
   color: #FFFFFF;
   transform: translateY(-2px);
@@ -207,7 +246,7 @@ button, input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(135deg, rgba(37, 211, 102, 0.40) 0%, rgba(37, 211, 102, 0.18) 100%);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.35) 0%, rgba(37, 211, 102, 0.15) 100%);
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 700;
@@ -222,25 +261,25 @@ button, input, textarea {
 }
 
 .orivex-btn-whatsapp:hover {
-  background: linear-gradient(135deg, rgba(37, 211, 102, 0.65) 0%, rgba(37, 211, 102, 0.35) 100%);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.60) 0%, rgba(37, 211, 102, 0.30) 100%);
   border-color: #25D366;
   transform: translateY(-2px);
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 14px 35px rgba(37, 211, 102, 0.5);
 }
 
-/* ─── HEADER Y NAVBAR (DISEÑO GLASS / CRISTAL ESMERILADO) ─── */
+/* ─── HEADER Y NAVBAR (CAPSULA DE CRISTAL FLOTANTE) ─── */
 .orivex-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 22px 0;
   transition: var(--trans);
 }
 
 .orivex-header.scrolled {
-  padding: 12px 0;
+  padding: 14px 0;
 }
 
 .header-container {
@@ -253,58 +292,60 @@ button, input, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, rgba(22, 25, 35, 0.60) 0%, rgba(11, 13, 18, 0.75) 100%);
-  backdrop-filter: blur(24px) saturate(190%);
-  -webkit-backdrop-filter: blur(24px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, rgba(20, 23, 33, 0.55) 0%, rgba(9, 10, 15, 0.70) 100%);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(229, 195, 120, 0.22);
   border-radius: var(--radius-pill);
   padding: 8px 14px 8px 24px;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.65);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 20px 45px rgba(0, 0, 0, 0.70), 0 0 30px rgba(229, 195, 120, 0.05);
   transition: var(--trans);
 }
 
 .orivex-header.scrolled .orivex-navbar {
-  background: linear-gradient(135deg, rgba(14, 16, 23, 0.75) 0%, rgba(8, 9, 13, 0.85) 100%);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 20px 50px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, rgba(14, 16, 23, 0.80) 0%, rgba(7, 8, 11, 0.90) 100%);
+  border-color: rgba(229, 195, 120, 0.35);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.20), 0 25px 60px rgba(0, 0, 0, 0.85);
 }
 
 /* Logo */
 .orivex-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-symbol {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-sm);
-  background: var(--c-gold-subtle);
-  border: 1px solid var(--border-gold);
+  background: linear-gradient(135deg, rgba(229, 195, 120, 0.2) 0%, rgba(229, 195, 120, 0.05) 100%);
+  border: 1px solid rgba(229, 195, 120, 0.4);
   color: var(--c-gold);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 15px rgba(229, 195, 120, 0.15);
 }
 
 .logo-title {
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   color: var(--t-white);
 }
 
 .logo-title strong {
   color: var(--c-gold);
+  font-weight: 900;
 }
 
 /* Enlaces */
 .orivex-nav-menu {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 28px;
   list-style: none;
 }
 
@@ -314,6 +355,7 @@ button, input, textarea {
   color: var(--t-muted);
   position: relative;
   padding: 6px 0;
+  letter-spacing: 0.2px;
 }
 
 .nav-link-item:hover,
@@ -328,7 +370,7 @@ button, input, textarea {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--c-gold);
+  background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
   border-radius: 2px;
 }
 
@@ -400,14 +442,14 @@ button, input, textarea {
   width: 100%;
 }
 
-/* ─── HERO ORIVEX ─── */
+/* ─── HERO ORIVEX (ALTA GAMA EDITORIAL) ─── */
 .orivex-hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 140px;
-  padding-bottom: 70px;
+  padding-top: 145px;
+  padding-bottom: 75px;
   overflow: hidden;
 }
 
@@ -422,15 +464,16 @@ button, input, textarea {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  opacity: 0.45; /* Imagen sutilmente visible */
-  filter: brightness(0.9) contrast(1.1);
+  opacity: 0.40;
+  filter: brightness(0.85) contrast(1.15);
 }
 
 .hero-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(9,10,13,0.50) 0%, rgba(9,10,13,0.75) 65%, #090A0D 100%),
-              linear-gradient(to right, rgba(9,10,13,0.85) 0%, rgba(9,10,13,0.30) 50%, rgba(9,10,13,0.85) 100%);
+  background: 
+    linear-gradient(to bottom, rgba(7,8,11,0.55) 0%, rgba(7,8,11,0.80) 65%, #07080B 100%),
+    linear-gradient(to right, rgba(7,8,11,0.90) 0%, rgba(7,8,11,0.25) 50%, rgba(7,8,11,0.90) 100%);
 }
 
 .hero-content-area {
@@ -438,44 +481,46 @@ button, input, textarea {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 60px;
 }
 
 /* Top Split */
 .hero-split-top {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 52px;
   align-items: end;
 }
 
 .hero-h1 {
   font-family: var(--font-display);
-  font-size: 64px;
+  font-size: 68px;
   font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -1.5px;
+  line-height: 1.04;
+  letter-spacing: -1.8px;
   color: var(--t-white);
   margin-bottom: 28px;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
 }
 
 .hero-buttons-wrapper {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .hero-right-blurb {
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 
 .hero-intro-text {
   font-size: 18px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--t-body);
   border-left: 2px solid var(--border-gold);
-  padding-left: 20px;
+  padding-left: 24px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Bottom Ticker Bar con Diseño Glassmorphism */
@@ -1577,43 +1622,64 @@ button, input, textarea {
   color: var(--t-white);
 }
 
-/* ─── ESTILOS PARA PÁGINAS INDEPENDIENTES (MULTI-PAGE) ─── */
+/* ─── ESTILOS PARA PÁGINAS INDEPENDIENTES (ALTA GAMA EDITORIAL) ─── */
 .page-hero-header {
-  padding-top: 150px;
-  padding-bottom: 60px;
-  background: linear-gradient(180deg, rgba(21, 23, 30, 0.75) 0%, rgba(9, 10, 13, 1) 100%);
-  border-bottom: 1px solid var(--border-subtle);
+  padding-top: 155px;
+  padding-bottom: 65px;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(229, 195, 120, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(16, 19, 28, 0.85) 0%, rgba(7, 8, 11, 1) 100%);
+  border-bottom: 1px solid rgba(229, 195, 120, 0.18);
   position: relative;
 }
 
 .page-hero-content {
-  max-width: 880px;
+  max-width: 900px;
 }
 
 .page-lead-title {
   font-family: var(--font-display);
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -1.2px;
+  line-height: 1.08;
+  letter-spacing: -1.4px;
   color: var(--t-white);
   margin-bottom: 18px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 }
 
 .page-lead-subtitle {
-  font-size: 18px;
+  font-size: 18.5px;
   color: var(--t-body);
-  line-height: 1.7;
+  line-height: 1.75;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Breadcrumb */
 .orivex-breadcrumb {
   display: flex;
   align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--t-muted);
+  margin-bottom: 18px;
+}
+
+.orivex-breadcrumb a {
+  color: var(--c-gold);
+}
+
+.orivex-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 /* Tarjetas de detalle de pilares (Glass Cards) */
 .pilar-deep-card {
   background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(229, 195, 120, 0.20);
   border-radius: var(--radius-xl);
   padding: 44px;
   margin-bottom: 32px;
@@ -1623,7 +1689,7 @@ button, input, textarea {
   align-items: center;
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10), 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10), 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(229, 195, 120, 0.04);
   transition: var(--trans);
 }
 
