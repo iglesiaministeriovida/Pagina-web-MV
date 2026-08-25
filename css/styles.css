@@ -125,28 +125,33 @@ button, input, textarea {
   margin-bottom: 48px;
 }
 
-/* ─── BOTONES ESTILO ORIVEX CON FLECHA ANIMADA ─── */
+/* ─── BOTONES CON DISEÑO GLASS / VIDRIO ESMERILADO (TEXTO ULTRA LEGIBLE) ─── */
 .orivex-btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--t-white);
-  color: #090A0D;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
+  color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
   padding: 10px 22px;
   border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 8px 24px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   transition: var(--trans);
   cursor: pointer;
-  border: none;
 }
 
 .btn-arrow-track {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #090A0D;
-  color: var(--t-white);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,13 +159,16 @@ button, input, textarea {
 }
 
 .orivex-btn-primary:hover {
-  background: var(--c-gold);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.40) 0%, rgba(245, 158, 11, 0.16) 100%);
+  border-color: rgba(245, 158, 11, 0.75);
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px var(--c-gold-glow);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 12px 30px rgba(245, 158, 11, 0.35);
 }
 
 .orivex-btn-primary:hover .btn-arrow-track {
-  background: #000;
+  background: rgba(245, 158, 11, 0.5);
+  border-color: var(--c-gold);
   transform: translateX(3px);
 }
 
@@ -173,44 +181,54 @@ button, input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
-  color: var(--t-white);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
   font-size: 14.5px;
   font-weight: 600;
   padding: 14px 26px;
   border-radius: var(--radius-pill);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 6px 20px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   transition: var(--trans);
 }
 
 .orivex-btn-secondary:hover {
-  background: #25D366;
-  border-color: #25D366;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.4) 0%, rgba(37, 211, 102, 0.15) 100%);
+  border-color: rgba(37, 211, 102, 0.7);
   color: #FFFFFF;
   transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 10px 28px rgba(37, 211, 102, 0.35);
 }
 
 .orivex-btn-whatsapp {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: #25D366;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.40) 0%, rgba(37, 211, 102, 0.18) 100%);
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 700;
   padding: 15px 30px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  border: 1px solid rgba(37, 211, 102, 0.55);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 10px 28px rgba(37, 211, 102, 0.35);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   transition: var(--trans);
 }
 
 .orivex-btn-whatsapp:hover {
-  background: #20BA5C;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.65) 0%, rgba(37, 211, 102, 0.35) 100%);
+  border-color: #25D366;
   transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 14px 35px rgba(37, 211, 102, 0.5);
 }
 
-/* ─── HEADER Y NAVBAR (ESTILO ORIVEX - OPACIDAD 80%) ─── */
+/* ─── HEADER Y NAVBAR (DISEÑO GLASS / CRISTAL ESMERILADO) ─── */
 .orivex-header {
   position: fixed;
   top: 0;
@@ -235,19 +253,20 @@ button, input, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(15, 17, 23, 0.80); /* 80% de opacidad */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(22, 25, 35, 0.60) 0%, rgba(11, 13, 18, 0.75) 100%);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-pill);
   padding: 8px 14px 8px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.65);
   transition: var(--trans);
 }
 
 .orivex-header.scrolled .orivex-navbar {
-  background: rgba(9, 10, 13, 0.80); /* 80% de opacidad al hacer scroll */
-  border-color: var(--border-hover);
+  background: linear-gradient(135deg, rgba(14, 16, 23, 0.75) 0%, rgba(8, 9, 13, 0.85) 100%);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
 /* Logo */
@@ -459,16 +478,18 @@ button, input, textarea {
   padding-left: 20px;
 }
 
-/* Bottom Ticker Bar */
+/* Bottom Ticker Bar con Diseño Glassmorphism */
 .hero-info-ticker {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(22, 25, 35, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
   padding: 24px 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 0 20px 50px rgba(0, 0, 0, 0.7);
 }
 
 .ticker-label {
@@ -482,16 +503,27 @@ button, input, textarea {
 .ticker-items-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 
 .ticker-box {
   display: flex;
   flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+  transition: var(--trans);
+}
+
+.ticker-box:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .tb-title {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--t-muted);
   text-transform: uppercase;
@@ -500,9 +532,10 @@ button, input, textarea {
 }
 
 .tb-val {
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--t-white);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .ticker-box.highlight .tb-val {
@@ -545,7 +578,8 @@ button, input, textarea {
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 16/11;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
 .strip-img-box img {
@@ -559,7 +593,7 @@ button, input, textarea {
   transform: scale(1.06);
 }
 
-/* Bento Stats Grid */
+/* Bento Stats Grid con Efecto Glass */
 .stats-bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -567,19 +601,23 @@ button, input, textarea {
 }
 
 .stat-card {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.75) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10), 0 20px 45px rgba(0, 0, 0, 0.5);
   transition: var(--trans);
 }
 
 .stat-card:hover {
-  border-color: var(--border-hover);
-  background: var(--c-bg-card-hover);
+  border-color: rgba(245, 158, 11, 0.6);
+  background: linear-gradient(135deg, rgba(28, 32, 45, 0.8) 0%, rgba(14, 16, 23, 0.9) 100%);
   transform: translateY(-4px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 25px 55px rgba(0, 0, 0, 0.7);
 }
 
 .stat-card-label {
@@ -598,6 +636,7 @@ button, input, textarea {
   color: var(--t-white);
   line-height: 1;
   margin-bottom: 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .stat-big-number .accent {
@@ -614,8 +653,8 @@ button, input, textarea {
 }
 
 .action-card {
-  background: #191C26;
-  border-color: var(--border-gold);
+  background: linear-gradient(135deg, rgba(35, 30, 20, 0.70) 0%, rgba(18, 16, 12, 0.85) 100%);
+  border-color: rgba(245, 158, 11, 0.5);
   justify-content: space-between;
 }
 
@@ -732,19 +771,23 @@ button, input, textarea {
 }
 
 .showcase-card {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 18px 45px rgba(0, 0, 0, 0.55);
   transition: var(--trans);
 }
 
 .showcase-card:hover {
-  border-color: var(--border-gold);
+  border-color: rgba(245, 158, 11, 0.6);
+  background: linear-gradient(135deg, rgba(28, 32, 45, 0.8) 0%, rgba(14, 16, 23, 0.9) 100%);
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 25px 55px rgba(0, 0, 0, 0.7);
 }
 
 .showcase-thumb-wrap {
@@ -768,11 +811,14 @@ button, input, textarea {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(9, 10, 13, 0.9);
+  background: rgba(9, 10, 13, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--c-gold);
   border-radius: var(--radius-sm);
   padding: 6px 10px;
   text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .d-day {
@@ -794,7 +840,7 @@ button, input, textarea {
 }
 
 .showcase-card-body {
-  padding: 22px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -810,10 +856,11 @@ button, input, textarea {
 
 .showcase-title {
   font-family: var(--font-display);
-  font-size: 17.5px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--t-white);
   margin-bottom: 8px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .showcase-snippet {
@@ -828,11 +875,11 @@ button, input, textarea {
   font-size: 12.5px;
   font-weight: 600;
   color: var(--t-muted);
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 12px;
 }
 
-/* ─── PLANES DE LECTURA ─── */
+/* ─── PLANES DE LECTURA (GLASS CARDS) ─── */
 .reading-orivex-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -840,17 +887,21 @@ button, input, textarea {
 }
 
 .reading-orivex-card {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
   overflow: hidden;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 18px 45px rgba(0, 0, 0, 0.55);
   transition: var(--trans);
 }
 
 .reading-orivex-card:hover {
-  border-color: var(--border-gold);
+  border-color: rgba(245, 158, 11, 0.6);
+  background: linear-gradient(135deg, rgba(28, 32, 45, 0.8) 0%, rgba(14, 16, 23, 0.9) 100%);
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 25px 55px rgba(0, 0, 0, 0.7);
 }
 
 .reading-cover-wrap {
@@ -874,12 +925,14 @@ button, input, textarea {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: var(--c-gold);
+  background: rgba(245, 158, 11, 0.85);
+  backdrop-filter: blur(8px);
   color: #000;
   font-size: 11px;
   font-weight: 900;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .reading-body {
@@ -892,6 +945,7 @@ button, input, textarea {
   font-weight: 800;
   color: var(--t-white);
   margin-bottom: 10px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .reading-p {
@@ -915,23 +969,26 @@ button, input, textarea {
   transform: translateX(4px);
 }
 
-/* ─── 🌟 REPRODUCTOR DESTACADO EN GRANDE 🌟 ─── */
+/* ─── 🌟 REPRODUCTOR DESTACADO EN GRANDE (GLASSMATED) ─── */
 .featured-video-wrapper {
   margin-bottom: 48px;
 }
 
 .featured-video-card {
-  background: var(--c-bg-card);
-  border: 1.5px solid var(--border-gold);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.70) 0%, rgba(10, 12, 17, 0.85) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 0 25px 65px rgba(0, 0, 0, 0.75);
   transition: var(--trans);
   cursor: pointer;
 }
 
 .featured-video-card:hover {
-  box-shadow: 0 25px 70px rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.8);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 30px 80px rgba(245, 158, 11, 0.25);
 }
 
 .featured-video-media {
@@ -959,7 +1016,7 @@ button, input, textarea {
 .featured-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(19, 21, 29, 0.95) 0%, rgba(19, 21, 29, 0.3) 50%, rgba(19, 21, 29, 0.5) 100%);
+  background: linear-gradient(to top, rgba(19, 21, 29, 0.95) 0%, rgba(19, 21, 29, 0.2) 50%, rgba(19, 21, 29, 0.4) 100%);
 }
 
 .featured-play-pill {
@@ -967,14 +1024,14 @@ button, input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  background: rgba(9, 10, 13, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid var(--c-gold);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.85) 0%, rgba(10, 12, 17, 0.90) 100%);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1.5px solid rgba(245, 158, 11, 0.6);
   padding: 10px 24px 10px 12px;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 15px 35px rgba(0, 0, 0, 0.7);
   transition: var(--trans);
   z-index: 3;
 }
@@ -983,12 +1040,13 @@ button, input, textarea {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--c-gold);
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
   color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 3px;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
   transition: var(--trans);
 }
 
@@ -998,20 +1056,13 @@ button, input, textarea {
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--t-white);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 
 .featured-video-card:hover .featured-play-pill {
   transform: scale(1.08);
-  background: var(--c-gold);
-}
-
-.featured-video-card:hover .play-circle-gold {
-  background: #000;
-  color: var(--c-gold);
-}
-
-.featured-video-card:hover .play-pill-text {
-  color: #000;
+  border-color: #F59E0B;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3) 0%, rgba(10, 12, 17, 0.9) 100%);
 }
 
 .featured-badge-live {
@@ -1021,7 +1072,8 @@ button, input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(9, 10, 13, 0.9);
+  background: rgba(9, 10, 13, 0.75);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 6px 16px;
   border-radius: var(--radius-pill);
@@ -1047,7 +1099,7 @@ button, input, textarea {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  background: var(--c-bg-card);
+  background: transparent;
 }
 
 .f-info-left {
@@ -1081,21 +1133,26 @@ button, input, textarea {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.25) 0%, rgba(255, 0, 0, 0.08) 100%);
+  border: 1px solid rgba(255, 0, 0, 0.45);
   color: var(--t-white);
   font-size: 14px;
   font-weight: 700;
   padding: 12px 22px;
   border-radius: var(--radius-pill);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 6px 20px rgba(255, 0, 0, 0.25);
   transition: var(--trans);
   flex-shrink: 0;
 }
 
 .btn-yt-link:hover {
-  background: #FF0000;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.8) 0%, rgba(200, 0, 0, 0.6) 100%);
   border-color: #FF0000;
   color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 0, 0, 0.5);
 }
 
 .sermon-sub-heading {
@@ -1109,7 +1166,7 @@ button, input, textarea {
   color: var(--t-muted);
 }
 
-/* Sermones Grid Inferior */
+/* Sermones Grid Inferior con Efecto Glass */
 .sermon-orivex-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1117,18 +1174,22 @@ button, input, textarea {
 }
 
 .sermon-orivex-card {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   cursor: pointer;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 18px 45px rgba(0, 0, 0, 0.55);
   transition: var(--trans);
 }
 
 .sermon-orivex-card:hover {
-  border-color: var(--border-gold);
+  border-color: rgba(245, 158, 11, 0.6);
+  background: linear-gradient(135deg, rgba(28, 32, 45, 0.8) 0%, rgba(14, 16, 23, 0.9) 100%);
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 25px 55px rgba(0, 0, 0, 0.7);
 }
 
 .sermon-frame {
@@ -1157,37 +1218,39 @@ button, input, textarea {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: var(--c-gold);
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
   color: #000;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 20px var(--c-gold-glow);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.5);
   transition: var(--trans);
   padding-left: 3px;
 }
 
 .sermon-orivex-card:hover .orivex-play-button {
   transform: translate(-50%, -50%) scale(1.12);
-  background: var(--c-gold-hover);
+  box-shadow: 0 6px 25px rgba(245, 158, 11, 0.8);
 }
 
 .video-length-tag {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
   color: #fff;
   font-size: 11.5px;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sermon-details {
-  padding: 22px;
+  padding: 24px;
 }
 
 .sermon-publish-date {
@@ -1204,6 +1267,7 @@ button, input, textarea {
   font-weight: 800;
   color: var(--t-white);
   margin-bottom: 6px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .sermon-summary-text {
@@ -1212,13 +1276,15 @@ button, input, textarea {
   line-height: 1.6;
 }
 
-/* ─── CONTACTO & ORACIÓN (ESTILO ORIVEX) ─── */
+/* ─── CONTACTO & ORACIÓN (GLASS CONTAINER) ─── */
 .orivex-contact-block {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.70) 0%, rgba(10, 12, 17, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-xl);
   padding: 56px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12), 0 25px 60px rgba(0, 0, 0, 0.7);
 }
 
 .contact-split-grid {
@@ -1235,6 +1301,7 @@ button, input, textarea {
   line-height: 1.2;
   color: var(--t-white);
   margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .contact-paragraph {
@@ -1258,11 +1325,12 @@ button, input, textarea {
 }
 
 .direct-icon-box {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
-  background: var(--c-bg-alt);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1284,7 +1352,7 @@ button, input, textarea {
   color: var(--t-white);
 }
 
-/* Formulario */
+/* Formulario con Campos Glass */
 .orivex-form {
   display: flex;
   flex-direction: column;
@@ -1319,12 +1387,13 @@ button, input, textarea {
 
 .orivex-input,
 .orivex-textarea {
-  background: #090A0D;
-  border: 1px solid var(--border-subtle);
+  background: rgba(9, 10, 13, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   padding: 13px 16px;
   color: var(--t-white);
   font-size: 15px;
+  backdrop-filter: blur(10px);
   outline: none;
   transition: var(--trans);
 }
@@ -1332,7 +1401,8 @@ button, input, textarea {
 .orivex-input:focus,
 .orivex-textarea:focus {
   border-color: var(--c-gold);
-  box-shadow: 0 0 0 3px var(--c-gold-subtle);
+  background: rgba(9, 10, 13, 0.85);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
 }
 
 .orivex-textarea {
@@ -1346,7 +1416,7 @@ button, input, textarea {
   padding: 14px 28px;
 }
 
-/* ─── SEDES Y HORARIOS ─── */
+/* ─── SEDES Y HORARIOS (GLASS BOXES) ─── */
 .venues-orivex-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1354,16 +1424,19 @@ button, input, textarea {
 }
 
 .venue-orivex-box {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
   padding: 36px;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10), 0 20px 50px rgba(0, 0, 0, 0.6);
   transition: var(--trans);
 }
 
 .venue-orivex-box:hover {
-  border-color: var(--border-gold);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 25px 60px rgba(0, 0, 0, 0.75);
 }
 
 .venue-pill {
@@ -1537,27 +1610,10 @@ button, input, textarea {
 .orivex-breadcrumb {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--t-muted);
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.orivex-breadcrumb a {
-  color: var(--c-gold);
-}
-
-.orivex-breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-/* Tarjetas de detalle de pilares */
+/* Tarjetas de detalle de pilares (Glass Cards) */
 .pilar-deep-card {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-xl);
   padding: 44px;
   margin-bottom: 32px;
@@ -1565,12 +1621,15 @@ button, input, textarea {
   grid-template-columns: 1fr 1.15fr;
   gap: 40px;
   align-items: center;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10), 0 20px 50px rgba(0, 0, 0, 0.6);
   transition: var(--trans);
 }
 
 .pilar-deep-card:hover {
-  border-color: var(--border-gold);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 25px 60px rgba(0, 0, 0, 0.75);
 }
 
 .pilar-deep-card.reverse {
@@ -1581,7 +1640,8 @@ button, input, textarea {
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 16/10;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
 }
 
 .pilar-card-img img {
@@ -1601,7 +1661,7 @@ button, input, textarea {
   height: 380px;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   margin-top: 24px;
 }
 
@@ -1627,7 +1687,7 @@ button, input, textarea {
   }
 }
 
-/* ─── SELECTOR DE IDIOMA (ES, PT, EN) ─── */
+/* ─── SELECTOR DE IDIOMA (GLASS BUTTON & DROPDOWN) ─── */
 .lang-selector-box {
   position: relative;
 }
@@ -1636,20 +1696,24 @@ button, input, textarea {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: var(--c-bg-pill);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: var(--radius-full);
   padding: 7px 12px;
-  color: var(--t-white);
+  color: #FFFFFF;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   transition: var(--trans);
 }
 
 .lang-selector-btn:hover {
-  border-color: var(--border-gold);
-  background: var(--c-bg-card);
+  border-color: rgba(245, 158, 11, 0.7);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3) 0%, rgba(255, 255, 255, 0.08) 100%);
 }
 
 .lang-dropdown-menu {
@@ -1657,12 +1721,14 @@ button, input, textarea {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  background: #11131A;
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.90) 0%, rgba(10, 12, 17, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-md);
   padding: 6px;
-  min-width: 140px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+  min-width: 145px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
   z-index: 100;
 }
 
@@ -1680,7 +1746,7 @@ button, input, textarea {
   background: transparent;
   border: none;
   border-radius: 6px;
-  color: var(--t-body);
+  color: var(--t-white);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -1690,11 +1756,11 @@ button, input, textarea {
 
 .lang-dropdown-item:hover,
 .lang-dropdown-item.active {
-  background: rgba(245, 158, 11, 0.12);
+  background: rgba(245, 158, 11, 0.2);
   color: var(--c-gold);
 }
 
-/* ─── LECTOR DE BIBLIA INTEGRADA (RVR1960) ─── */
+/* ─── LECTOR DE BIBLIA INTEGRADA (GLASS INTERACTION) ─── */
 .bible-container-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -1703,14 +1769,17 @@ button, input, textarea {
 }
 
 .bible-sidebar {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.65) 0%, rgba(10, 12, 17, 0.80) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-xl);
   padding: 24px;
   max-height: 80vh;
   overflow-y: auto;
   position: sticky;
   top: 100px;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .bible-section-tag {
@@ -1733,31 +1802,37 @@ button, input, textarea {
   padding: 6px 11px;
   font-size: 12.5px;
   font-weight: 600;
-  background: var(--c-bg-pill);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: var(--radius-sm);
-  color: var(--t-body);
+  color: var(--t-white);
+  backdrop-filter: blur(8px);
   cursor: pointer;
   transition: var(--trans);
 }
 
 .bible-book-pill:hover {
   color: var(--t-white);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .bible-book-pill.active {
-  background: var(--c-gold);
-  color: #090A0D;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.5) 0%, rgba(245, 158, 11, 0.25) 100%);
+  color: #FFFFFF;
   font-weight: 800;
-  border-color: var(--c-gold);
+  border-color: #F59E0B;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
 }
 
 .bible-main-reader {
-  background: var(--c-bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(22, 25, 36, 0.70) 0%, rgba(10, 12, 17, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-xl);
   padding: 40px;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10), 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .bible-reader-controls {
@@ -1766,7 +1841,7 @@ button, input, textarea {
   align-items: center;
   padding-bottom: 24px;
   margin-bottom: 24px;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -1778,19 +1853,20 @@ button, input, textarea {
 }
 
 .bible-tool-btn {
-  background: var(--c-bg-pill);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-sm);
   color: var(--t-white);
-  padding: 6px 12px;
+  padding: 6px 14px;
   font-size: 13px;
   font-weight: 700;
+  backdrop-filter: blur(10px);
   cursor: pointer;
   transition: var(--trans);
 }
 
 .bible-tool-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.18);
   border-color: var(--border-gold);
 }
 
@@ -1800,9 +1876,10 @@ button, input, textarea {
   gap: 6px;
   margin-bottom: 30px;
   padding: 14px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
 }
 
 .bible-chap-pill {
@@ -1813,44 +1890,45 @@ button, input, textarea {
   justify-content: center;
   font-size: 13px;
   font-weight: 700;
-  background: var(--c-bg-pill);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 6px;
-  color: var(--t-body);
+  color: var(--t-white);
   cursor: pointer;
   transition: var(--trans);
 }
 
 .bible-chap-pill:hover {
   color: var(--t-white);
+  background: rgba(255, 255, 255, 0.12);
   border-color: var(--c-gold);
 }
 
 .bible-chap-pill.active {
-  background: var(--c-gold);
-  color: #090A0D;
-  border-color: var(--c-gold);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.6) 0%, rgba(245, 158, 11, 0.3) 100%);
+  color: #FFFFFF;
+  border-color: #F59E0B;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
 }
 
 .bible-verse-line {
   line-height: 1.8;
-  color: var(--t-body);
+  color: var(--t-white);
   margin-bottom: 16px;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 6px;
   transition: background 0.2s;
 }
 
 .bible-verse-line:hover {
-  background: rgba(245, 158, 11, 0.08);
-  color: var(--t-white);
+  background: rgba(245, 158, 11, 0.12);
 }
 
 .verse-number {
   color: var(--c-gold);
   font-weight: 800;
-  font-size: 11px;
+  font-size: 11.5px;
   margin-right: 6px;
 }
 
@@ -1858,7 +1936,8 @@ button, input, textarea {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: #11131A;
+  background: rgba(17, 19, 26, 0.9);
+  backdrop-filter: blur(16px);
   color: var(--c-gold);
   border: 1px solid var(--c-gold);
   padding: 12px 20px;
@@ -1868,11 +1947,6 @@ button, input, textarea {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
   opacity: 0;
   transform: translateY(10px);
-  transition: var(--trans);
-  pointer-events: none;
-  z-index: 9999;
-}
-
 .bible-toast.show {
   opacity: 1;
   transform: translateY(0);
