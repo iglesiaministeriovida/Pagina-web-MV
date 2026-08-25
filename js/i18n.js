@@ -12,7 +12,6 @@ const translations = {
     nav_events: "Eventos",
     nav_reading: "Lecturas",
     nav_sermons: "Sermones",
-    nav_bible: "Biblia",
     nav_location: "Ubicación",
     nav_cta: "Planifica tu Visita",
     nav_whatsapp: "Escribir al Pastor",
@@ -20,7 +19,7 @@ const translations = {
     // Hero
     hero_title_1: "Transformando",
     hero_title_2: "Vidas con Dios",
-    hero_btn_new: "Soy Nuevo / Sedes",
+    hero_btn_new: "Planifica tu Visita",
     hero_btn_whatsapp: "WhatsApp Pastoral",
     hero_intro: "Te damos la bienvenida a una comunidad contemporánea, cálida y de sólida base bíblica. Un lugar seguro para aprender, sanar, hacer amigos sinceros y vivir con propósito eterno.",
     
@@ -50,7 +49,6 @@ const translations = {
     nav_events: "Eventos",
     nav_reading: "Leituras",
     nav_sermons: "Sermões",
-    nav_bible: "Bíblia",
     nav_location: "Localização",
     nav_cta: "Planeje sua Visita",
     nav_whatsapp: "Falar com o Pastor",
@@ -58,7 +56,7 @@ const translations = {
     // Hero
     hero_title_1: "Transformando",
     hero_title_2: "Vidas com Deus",
-    hero_btn_new: "Sou Novo / Sedes",
+    hero_btn_new: "Planeje sua Visita",
     hero_btn_whatsapp: "WhatsApp Pastoral",
     hero_intro: "Seja bem-vindo a uma comunidade contemporânea, acolhedora e de sólida base bíblica. Um lugar seguro para aprender, curar, fazer amigos verdadeiros e viver com propósito eterno.",
     
@@ -88,7 +86,6 @@ const translations = {
     nav_events: "Events",
     nav_reading: "Reading",
     nav_sermons: "Sermons",
-    nav_bible: "Bible",
     nav_location: "Locations",
     nav_cta: "Plan Your Visit",
     nav_whatsapp: "Message the Pastor",
@@ -96,7 +93,7 @@ const translations = {
     // Hero
     hero_title_1: "Transforming",
     hero_title_2: "Lives with God",
-    hero_btn_new: "I'm New / Locations",
+    hero_btn_new: "Plan Your Visit",
     hero_btn_whatsapp: "Pastoral WhatsApp",
     hero_intro: "Welcome to a contemporary, warm, and Bible-centered community. A safe place to learn, heal, build genuine friendships, and live with eternal purpose.",
     

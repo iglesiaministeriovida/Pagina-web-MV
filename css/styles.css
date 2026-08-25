@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
    MINISTERIO VIDA — SISTEMA DE DISEÑO ULTRA-MINIMALISTA PURE WHITE
@@ -13,7 +13,7 @@
   --c-bg-card-hover: #FFFFFF;
   --c-bg-pill: #F4F4F5;
 
-  /* ─── Acentos Minimalistas (Negro Puro & Acento Ámbar Sutil) ─── */
+  /* ─── Acentos Minimalistas ─── */
   --c-gold: #18181B;
   --c-gold-light: #27272A;
   --c-gold-hover: #000000;
@@ -36,7 +36,7 @@
 
   /* ─── Tipografías ─── */
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Plus Jakarta Sans', var(--font-main);
+  --font-display: 'Outfit', 'Plus Jakarta Sans', var(--font-main);
 
   /* ─── Dimensiones y Radios ─── */
   --max-w: 1220px;
@@ -102,38 +102,28 @@ button, input, textarea {
   font-family: inherit;
 }
 
-/* ─── UTILIDADES DE TEXTO MINIMALISTAS ─── */
+/* ─── UTILIDADES DE TEXTO MINIMALISTAS (SIN SUBRAYADO) ─── */
 .text-accent-gold {
   color: #09090B;
-  display: inline-block;
-  font-weight: 900;
-  position: relative;
-}
-
-.text-accent-gold::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #09090B;
-  border-radius: 2px;
+  display: inline;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .section-label-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-display);
   font-size: 11.5px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #09090B;
   margin-bottom: 18px;
   background: #F4F4F5;
   border: 1px solid #E4E4E7;
-  padding: 5px 14px;
+  padding: 6px 14px;
   border-radius: var(--radius-pill);
 }
 
@@ -141,8 +131,8 @@ button, input, textarea {
   font-family: var(--font-display);
   font-size: 42px;
   font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -1.2px;
+  line-height: 1.12;
+  letter-spacing: -1px;
   color: #09090B;
 }
 
@@ -1462,20 +1452,21 @@ button, input, textarea {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #FFFFFF;
-  border: 1px solid #E4E4E7;
+  background: transparent;
+  border: none;
   border-radius: var(--radius-full);
-  padding: 7px 12px;
+  padding: 6px 10px;
   color: #09090B;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  box-shadow: none;
   transition: var(--trans);
 }
 
 .lang-selector-btn:hover {
-  border-color: #09090B;
+  background: #F4F4F5;
+  color: #09090B;
 }
 
 .lang-dropdown-menu {
