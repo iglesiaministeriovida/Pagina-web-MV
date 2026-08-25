@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planes de Lectura Devocional | Ministerio Vida</title>
-    <meta name="description" content="Planes de lectura bíblica y devocionales diarios para fortalecer tu vida espiritual junto a Ministerio Vida.">
+    <title>Biblia Reina-Valera 1960 | Ministerio Vida</title>
+    <meta name="description" content="Lee y estudia las Sagradas Escrituras en la versión Reina-Valera 1960 (RVR1960) directamente en Ministerio Vida.">
     <meta name="theme-color" content="#090A0D">
 
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,9 +20,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23090A0D'/><path d='M50 18v64M28 38h44' stroke='%23F59E0B' stroke-width='9' stroke-linecap='round'/></svg>">
 </head>
-<body class="orivex-theme">
+<body class="orivex-theme" id="bibleApp">
 
-    <!-- HEADER -->
+    <!-- HEADER CON SELECTOR DE IDIOMA -->
     <header class="orivex-header">
         <div class="header-container">
             <nav class="orivex-navbar">
@@ -38,13 +38,14 @@
                     <li><a href="nosotros.html" class="nav-link-item" data-i18n="nav_about">Nosotros</a></li>
                     <li><a href="pilares.html" class="nav-link-item" data-i18n="nav_pillars">Pilares</a></li>
                     <li><a href="eventos.html" class="nav-link-item" data-i18n="nav_events">Eventos</a></li>
-                    <li><a href="lecturas.html" class="nav-link-item active" data-i18n="nav_reading">Lecturas</a></li>
+                    <li><a href="lecturas.html" class="nav-link-item" data-i18n="nav_reading">Lecturas</a></li>
                     <li><a href="sermones.html" class="nav-link-item" data-i18n="nav_sermons">Sermones</a></li>
-                    <li><a href="biblia.html" class="nav-link-item" data-i18n="nav_bible">Biblia</a></li>
+                    <li><a href="biblia.html" class="nav-link-item active" data-i18n="nav_bible">Biblia</a></li>
                     <li><a href="ubicacion.html" class="nav-link-item" data-i18n="nav_location">Ubicación</a></li>
                 </ul>
 
                 <div class="nav-cta-box">
+                    <!-- Selector de Idioma -->
                     <div class="lang-selector-box">
                         <button class="lang-selector-btn" aria-label="Cambiar Idioma">
                             <span>🌐</span>
@@ -61,7 +62,7 @@
                     <a href="ubicacion.html#contacto" class="orivex-btn-primary">
                         <span data-i18n="nav_cta">Planifica tu Visita</span>
                         <div class="btn-arrow-track">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                     
@@ -72,100 +73,75 @@
             </nav>
         </div>
 
+        <!-- Menú Móvil -->
         <div class="orivex-mobile-drawer" id="mobileDrawer">
             <a href="index.html" class="m-nav-link" data-i18n="nav_home">Inicio</a>
             <a href="nosotros.html" class="m-nav-link" data-i18n="nav_about">Sobre Nosotros</a>
             <a href="pilares.html" class="m-nav-link" data-i18n="nav_pillars">Pilares de Vida</a>
             <a href="eventos.html" class="m-nav-link" data-i18n="nav_events">Próximos Eventos</a>
-            <a href="lecturas.html" class="m-nav-link active" data-i18n="nav_reading">Planes de Lectura</a>
+            <a href="lecturas.html" class="m-nav-link" data-i18n="nav_reading">Planes de Lectura</a>
             <a href="sermones.html" class="m-nav-link" data-i18n="nav_sermons">Prédicas en Video</a>
-            <a href="biblia.html" class="m-nav-link" data-i18n="nav_bible">Biblia RVR1960</a>
+            <a href="biblia.html" class="m-nav-link active" data-i18n="nav_bible">Biblia RVR1960</a>
             <a href="ubicacion.html" class="m-nav-link" data-i18n="nav_location">Sedes &amp; Ubicación</a>
-            <a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="orivex-btn-primary m-btn-full">
-                <span data-i18n="nav_whatsapp">Escribir al Pastor</span>
-                <div class="btn-arrow-track">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
-            </a>
         </div>
     </header>
 
     <main>
-        <!-- CABECERA DE PÁGINA -->
+        <!-- CABECERA -->
         <section class="page-hero-header">
             <div class="orivex-container">
                 <div class="orivex-breadcrumb">
-                    <a href="index.html">Inicio</a>
+                    <a href="index.html" data-i18n="nav_home">Inicio</a>
                     <span>/</span>
-                    <span>Planes de Lectura</span>
+                    <span>Biblia Reina-Valera 1960</span>
                 </div>
                 <div class="page-hero-content animate-fade">
-                    <div class="section-label-tag">/ CRECIMIENTO DEVOCIONAL /</div>
-                    <h1 class="page-lead-title">Alimenta tu espíritu cada día</h1>
+                    <div class="section-label-tag">/ PALABRA DE DIOS /</div>
+                    <h1 class="page-lead-title">Santas Escrituras (RVR1960)</h1>
                     <p class="page-lead-subtitle">
-                        Lecturas bíblicas guiadas para desarrollar el hábito diario de la oración y meditación en la Palabra de Dios.
+                        Explora los 66 libros del Antiguo y Nuevo Testamento. Haz clic sobre cualquier versículo para copiarlo y compartirlo.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- PLANES EN GRID -->
+        <!-- LECTOR INTERACTIVO -->
         <section class="orivex-section">
             <div class="orivex-container">
-                <div class="reading-orivex-grid">
-                    <!-- Plan 1 -->
-                    <div class="reading-orivex-card scroll-reveal">
-                        <div class="reading-cover-wrap">
-                            <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=700&q=80&auto=format&fit=crop" alt="El Sermón del Monte" loading="lazy">
-                            <span class="reading-duration-badge">21 DÍAS</span>
-                        </div>
-                        <div class="reading-body">
-                            <h3 class="reading-h3">El Sermón del Monte</h3>
-                            <p class="reading-p">Las enseñanzas centrales de Jesús explicadas de forma práctica para transformar tu día a día, relaciones y decisiones.</p>
-                            <a href="https://wa.me/591XXXXXXXXX?text=Hola%2C%20quisiera%20el%20Plan%20de%20Lectura%20del%20Sermon%20del%20Monte" target="_blank" rel="noopener noreferrer" class="orivex-btn-primary" style="font-size: 13px;">
-                                <span>Recibir Guía en PDF</span>
-                                <div class="btn-arrow-track">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                <div class="bible-container-grid">
+                    
+                    <!-- Barra Lateral: Selector de Libros -->
+                    <aside class="bible-sidebar">
+                        <h3 style="font-size: 16px; color: var(--t-white); margin-bottom: 8px;">📖 Libros de la Biblia</h3>
+                        
+                        <div class="bible-section-tag">Antiguo Testamento (39)</div>
+                        <div class="bible-books-wrap" id="booksAT"></div>
 
-                    <!-- Plan 2 -->
-                    <div class="reading-orivex-card scroll-reveal">
-                        <div class="reading-cover-wrap">
-                            <img src="https://images.unsplash.com/photo-1506784693919-ef06d93c28d2?w=700&q=80&auto=format&fit=crop" alt="Salmos para el Alma" loading="lazy">
-                            <span class="reading-duration-badge">14 DÍAS</span>
-                        </div>
-                        <div class="reading-body">
-                            <h3 class="reading-h3">Salmos para el Alma</h3>
-                            <p class="reading-p">Un recorrido por oraciones y cánticos bíblicos que traen consuelo, paz y fortaleza en momentos de prueba y ansiedad.</p>
-                            <a href="https://wa.me/591XXXXXXXXX?text=Hola%2C%20quisiera%20el%20Plan%20de%20Salmos%20para%20el%20Alma" target="_blank" rel="noopener noreferrer" class="orivex-btn-primary" style="font-size: 13px;">
-                                <span>Recibir Guía en PDF</span>
-                                <div class="btn-arrow-track">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                        <div class="bible-section-tag">Nuevo Testamento (27)</div>
+                        <div class="bible-books-wrap" id="booksNT"></div>
+                    </aside>
 
-                    <!-- Plan 3 -->
-                    <div class="reading-orivex-card scroll-reveal">
-                        <div class="reading-cover-wrap">
-                            <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=700&q=80&auto=format&fit=crop" alt="Fe en Acción" loading="lazy">
-                            <span class="reading-duration-badge">7 DÍAS</span>
+                    <!-- Lector Principal de Capítulos y Versículos -->
+                    <section class="bible-main-reader">
+                        <div class="bible-reader-controls">
+                            <h2 id="bibleChapterTitle" style="font-size: 24px; color: var(--t-white); font-weight: 800;">
+                                Juan 3 (Reina-Valera 1960)
+                            </h2>
+
+                            <!-- Controles de lectura -->
+                            <div class="bible-font-tools">
+                                <button class="bible-tool-btn" id="btnFontMinus" title="Reducir tamaño de letra">A-</button>
+                                <button class="bible-tool-btn" id="btnFontPlus" title="Aumentar tamaño de letra">A+</button>
+                            </div>
                         </div>
-                        <div class="reading-body">
-                            <h3 class="reading-h3">Fe en Acción Cotidiana</h3>
-                            <p class="reading-p">Principios claros del libro de Santiago para reflejar tus convicciones en tu hogar, finanzas y lugar de trabajo.</p>
-                            <a href="https://wa.me/591XXXXXXXXX?text=Hola%2C%20quisiera%20el%20Plan%20Fe%20en%20Accion" target="_blank" rel="noopener noreferrer" class="orivex-btn-primary" style="font-size: 13px;">
-                                <span>Recibir Guía en PDF</span>
-                                <div class="btn-arrow-track">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+
+                        <!-- Selector Horizontal de Capítulos -->
+                        <div class="bible-chapters-strip" id="chapterSelector"></div>
+
+                        <!-- Contenedor de Versículos -->
+                        <div id="bibleVersesContainer"></div>
+                    </section>
+
                 </div>
             </div>
         </section>
@@ -178,7 +154,7 @@
                 <div class="footer-brand-side">
                     <div class="footer-logo">
                         <div class="logo-symbol">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20M5 8h14"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M5 8h14"/></svg>
                         </div>
                         <span>MINISTERIO<strong>VIDA</strong></span>
                     </div>
@@ -194,6 +170,7 @@
                             <li><a href="index.html">Inicio</a></li>
                             <li><a href="nosotros.html">Nosotros</a></li>
                             <li><a href="pilares.html">Pilares</a></li>
+                            <li><a href="biblia.html">Biblia RVR1960</a></li>
                             <li><a href="ubicacion.html">Ubicación</a></li>
                         </ul>
                     </div>
@@ -218,7 +195,7 @@
             </div>
 
             <div class="footer-legal-bar">
-                <p>© 2024 Ministerio Vida. Santa Cruz de la Sierra, Bolivia.</p>
+                <p data-i18n="footer_rights">© 2024 Ministerio Vida. Santa Cruz de la Sierra, Bolivia.</p>
                 <div class="footer-legal-links">
                     <a href="ubicacion.html">Ubicación</a>
                 </div>
@@ -226,7 +203,9 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/i18n.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/bible.js" defer></script>
 </body>
 </html>

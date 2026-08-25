@@ -34,18 +34,32 @@
                 </a>
 
                 <ul class="orivex-nav-menu">
-                    <li><a href="index.html" class="nav-link-item">Inicio</a></li>
-                    <li><a href="nosotros.html" class="nav-link-item">Nosotros</a></li>
-                    <li><a href="pilares.html" class="nav-link-item active">Pilares</a></li>
-                    <li><a href="eventos.html" class="nav-link-item">Eventos</a></li>
-                    <li><a href="lecturas.html" class="nav-link-item">Lecturas</a></li>
-                    <li><a href="sermones.html" class="nav-link-item">Sermones</a></li>
-                    <li><a href="ubicacion.html" class="nav-link-item">Ubicación</a></li>
+                    <li><a href="index.html" class="nav-link-item" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="nosotros.html" class="nav-link-item" data-i18n="nav_about">Nosotros</a></li>
+                    <li><a href="pilares.html" class="nav-link-item active" data-i18n="nav_pillars">Pilares</a></li>
+                    <li><a href="eventos.html" class="nav-link-item" data-i18n="nav_events">Eventos</a></li>
+                    <li><a href="lecturas.html" class="nav-link-item" data-i18n="nav_reading">Lecturas</a></li>
+                    <li><a href="sermones.html" class="nav-link-item" data-i18n="nav_sermons">Sermones</a></li>
+                    <li><a href="biblia.html" class="nav-link-item" data-i18n="nav_bible">Biblia</a></li>
+                    <li><a href="ubicacion.html" class="nav-link-item" data-i18n="nav_location">Ubicación</a></li>
                 </ul>
 
                 <div class="nav-cta-box">
+                    <div class="lang-selector-box">
+                        <button class="lang-selector-btn" aria-label="Cambiar Idioma">
+                            <span>🌐</span>
+                            <span class="current-lang-text">ES</span>
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="lang-dropdown-menu">
+                            <button class="lang-dropdown-item active" data-lang="es">🇪🇸 Español (ES)</button>
+                            <button class="lang-dropdown-item" data-lang="pt">🇧🇷 Português (PT)</button>
+                            <button class="lang-dropdown-item" data-lang="en">🇺🇸 English (EN)</button>
+                        </div>
+                    </div>
+
                     <a href="ubicacion.html#contacto" class="orivex-btn-primary">
-                        <span>Planifica tu Visita</span>
+                        <span data-i18n="nav_cta">Planifica tu Visita</span>
                         <div class="btn-arrow-track">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
@@ -59,15 +73,16 @@
         </div>
 
         <div class="orivex-mobile-drawer" id="mobileDrawer">
-            <a href="index.html" class="m-nav-link">Inicio</a>
-            <a href="nosotros.html" class="m-nav-link">Sobre Nosotros</a>
-            <a href="pilares.html" class="m-nav-link active">Pilares de Vida</a>
-            <a href="eventos.html" class="m-nav-link">Próximos Eventos</a>
-            <a href="lecturas.html" class="m-nav-link">Planes de Lectura</a>
-            <a href="sermones.html" class="m-nav-link">Prédicas en Video</a>
-            <a href="ubicacion.html" class="m-nav-link">Sedes &amp; Ubicación</a>
+            <a href="index.html" class="m-nav-link" data-i18n="nav_home">Inicio</a>
+            <a href="nosotros.html" class="m-nav-link" data-i18n="nav_about">Sobre Nosotros</a>
+            <a href="pilares.html" class="m-nav-link active" data-i18n="nav_pillars">Pilares de Vida</a>
+            <a href="eventos.html" class="m-nav-link" data-i18n="nav_events">Próximos Eventos</a>
+            <a href="lecturas.html" class="m-nav-link" data-i18n="nav_reading">Planes de Lectura</a>
+            <a href="sermones.html" class="m-nav-link" data-i18n="nav_sermons">Prédicas en Video</a>
+            <a href="biblia.html" class="m-nav-link" data-i18n="nav_bible">Biblia RVR1960</a>
+            <a href="ubicacion.html" class="m-nav-link" data-i18n="nav_location">Sedes &amp; Ubicación</a>
             <a href="https://wa.me/591XXXXXXXXX" target="_blank" rel="noopener noreferrer" class="orivex-btn-primary m-btn-full">
-                <span>Escribir al Pastor</span>
+                <span data-i18n="nav_whatsapp">Escribir al Pastor</span>
                 <div class="btn-arrow-track">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
@@ -229,6 +244,7 @@
         </div>
     </footer>
 
+    <script src="js/i18n.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>
