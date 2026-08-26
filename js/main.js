@@ -103,4 +103,57 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 700);
         });
     }
+
+    // 6. Modo Oscuro (Dark / Light Theme Toggle)
+    const initTheme = () => {
+        const savedTheme = localStorage.getItem('mv-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    };
+    initTheme();
+
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const activeTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', activeTheme);
+            localStorage.setItem('mv-theme', activeTheme);
+        });
+    });
+
+    // 7. Botón Flotante Inteligente de WhatsApp
+    const floatingWaBtn = document.getElementById('floatingWhatsapp');
+    const heroWaBtn = document.querySelector('.hero-buttons-wrapper .orivex-btn-secondary, .hero-buttons-wrapper a[href*="wa.me"]');
+
+    if (floatingWaBtn) {
+        if (heroWaBtn) {
+            const waObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // El botón principal del Hero está visible -> ocultar flotante
+                        floatingWaBtn.classList.remove('is-active');
+                    } else {
+                        // El botón del Hero salió de la pantalla -> mostrar flotante en esquina
+                        floatingWaBtn.classList.add('is-active');
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1
+            });
+            waObserver.observe(heroWaBtn);
+        } else {
+            // Páginas sin botón de hero -> mostrar tras desplazarse
+            const handleSecondaryScroll = () => {
+                if (window.scrollY > 260) {
+                    floatingWaBtn.classList.add('is-active');
+                } else {
+                    floatingWaBtn.classList.remove('is-active');
+                }
+            };
+            window.addEventListener('scroll', handleSecondaryScroll, { passive: true });
+            handleSecondaryScroll();
+        }
+    }
 });
