@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
    MINISTERIO VIDA — SISTEMA DE DISEÑO ULTRA-MINIMALISTA PURE WHITE
-   Estética: Blanco Puro Inmaculado, Tipografía Geométrica Ultra-Limpia (Montserrat Light)
+   Estética: Blanco Puro Inmaculado, Tipografía Arquitectónica Moderna (Space Grotesk)
    ========================================================================== */
 
 :root {
@@ -34,9 +34,9 @@
   --border-gold: #E4E4E7;
   --border-glass: #E4E4E7;
 
-  /* ─── Tipografías: Montserrat Light para Títulos y Plus Jakarta Sans para Lectura ─── */
+  /* ─── Tipografías: Space Grotesk para Títulos y Plus Jakarta Sans para Lectura ─── */
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* ─── Dimensiones y Radios ─── */
   --max-w: 1220px;
@@ -102,12 +102,12 @@ button, input, textarea {
   font-family: inherit;
 }
 
-/* ─── UTILIDADES DE TEXTO GEOMÉTRICO (MONTSERRAT LIGHT) ─── */
+/* ─── UTILIDADES DE TEXTO ARQUITECTÓNICO (SPACE GROTESK) ─── */
 .text-accent-gold {
   color: #09090B;
   display: inline;
-  font-weight: 500;
-  letter-spacing: -0.5px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
 }
 
 .section-label-tag {
@@ -116,7 +116,7 @@ button, input, textarea {
   gap: 8px;
   font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #09090B;
@@ -129,10 +129,10 @@ button, input, textarea {
 
 .section-main-heading {
   font-family: var(--font-display);
-  font-size: 38px;
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -0.5px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1px;
   color: #09090B;
 }
 
@@ -459,9 +459,9 @@ button, input, textarea {
 .hero-h1 {
   font-family: var(--font-display);
   font-size: 60px;
-  font-weight: 300;
-  line-height: 1.14;
-  letter-spacing: -0.5px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
   color: #09090B;
   margin-bottom: 24px;
 }
@@ -1656,9 +1656,9 @@ button, input, textarea {
 .page-lead-title {
   font-family: var(--font-display);
   font-size: 44px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -1px;
   color: #09090B;
   margin-bottom: 18px;
 }
