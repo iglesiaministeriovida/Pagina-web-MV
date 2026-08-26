@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
    MINISTERIO VIDA — SISTEMA DE DISEÑO ULTRA-MINIMALISTA PURE WHITE
-   Estética: Blanco Puro Inmaculado, Tipografía Esculpida Clásica Monumental (Cinzel)
+   Estética: Blanco Puro Inmaculado, Tipografía Geométrica Ultra-Limpia (Montserrat Light)
    ========================================================================== */
 
 :root {
@@ -34,9 +34,9 @@
   --border-gold: #E4E4E7;
   --border-glass: #E4E4E7;
 
-  /* ─── Tipografías: Cinzel para Títulos y Plus Jakarta Sans para Lectura ─── */
+  /* ─── Tipografías: Montserrat Light para Títulos y Plus Jakarta Sans para Lectura ─── */
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* ─── Dimensiones y Radios ─── */
   --max-w: 1220px;
@@ -102,21 +102,21 @@ button, input, textarea {
   font-family: inherit;
 }
 
-/* ─── UTILIDADES DE TEXTO ESCULPIDO (CINZEL) ─── */
+/* ─── UTILIDADES DE TEXTO GEOMÉTRICO (MONTSERRAT LIGHT) ─── */
 .text-accent-gold {
   color: #09090B;
   display: inline;
-  font-weight: 600;
-  letter-spacing: 0.8px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 }
 
 .section-label-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #09090B;
@@ -129,10 +129,10 @@ button, input, textarea {
 
 .section-main-heading {
   font-family: var(--font-display);
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: 0.5px;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.5px;
   color: #09090B;
 }
 
@@ -458,10 +458,10 @@ button, input, textarea {
 
 .hero-h1 {
   font-family: var(--font-display);
-  font-size: 54px;
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: 0.5px;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1.14;
+  letter-spacing: -0.5px;
   color: #09090B;
   margin-bottom: 24px;
 }
@@ -1526,10 +1526,10 @@ button, input, textarea {
 
 .page-lead-title {
   font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.22;
-  letter-spacing: 0.5px;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
   color: #09090B;
   margin-bottom: 18px;
 }
